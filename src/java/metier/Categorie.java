@@ -1,11 +1,7 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package metier;
 
 /**
- *
+ * Représente les différentes catégories auxquelles peuvent appartenir les articles
  * @author gruselle
  */
 public class Categorie {

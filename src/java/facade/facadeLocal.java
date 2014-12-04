@@ -35,7 +35,7 @@ public interface facadeLocal
     Categorie getIdCategorie();
     String getLienPhoto();
     int getSeuilStockMin();
-    Article.etatArticle getEtatArticle();
+    Article.EtatArticle getEtatArticle();
     
     /*
      * méthodes panier

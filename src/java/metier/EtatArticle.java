@@ -10,5 +10,5 @@ package metier;
  */
 public enum EtatArticle
 {
-    Disponible, DeapproEnCours, AReappro, Rupture;
+    Disponible, ReapproEnCours, AReappro, Rupture;
 }

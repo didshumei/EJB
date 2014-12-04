@@ -4,7 +4,7 @@
  */
 package metier;
 
-import metier.Article.etatArticle;
+import metier.Article.EtatArticle;
 
 /**
  * Represente un article dans le stock avec sa quantite, et l'etat du stock pour cette article.
@@ -13,7 +13,7 @@ import metier.Article.etatArticle;
 public class LigneDeStock
 {
     private Article article;
-    private etatArticle etat;
+    private EtatArticle etat;
     private int seuil;
     private int quantite;
     
@@ -67,12 +67,12 @@ public class LigneDeStock
         this.seuil = seuil;
     }
 
-    public etatArticle getEtat()
+    public EtatArticle getEtat()
     {
         return etat;
     }
 
-    public void setEtat(etatArticle etat)
+    public void setEtat(EtatArticle etat)
     {
         this.etat = etat;
     }

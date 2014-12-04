@@ -100,7 +100,7 @@ public class facade implements facadeLocal
     }
 
     @Override
-    public Article.etatArticle getEtatArticle() 
+    public Article.EtatArticle getEtatArticle() 
     {
         return ejb_art.getEtatArticle();
     }
