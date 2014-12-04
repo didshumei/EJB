@@ -4,11 +4,15 @@
  */
 package facade;
 
+import Ejb.EJBLigneDeStock;
+import interfaces.EJBCatalogueFournisseursLocal;
+import interfaces.EJBCommandeReapproLocal;
 import java.util.ArrayList;
 import javax.ejb.EJB;
 import javax.ejb.Stateless;
 import metier.Adresse;
 import metier.Article;
+import metier.ArticleFournisseur;
 import metier.Categorie;
 import metier.EJBArticle;
 import metier.EJBBanque;
@@ -16,6 +20,7 @@ import metier.EJBCompteClient;
 import metier.EJBLignePanier;
 import metier.EJBMoyenPaiement;
 import metier.EJBPanier;
+import metier.Fournisseur;
 import metier.Genre;
 import metier.LignePanier;
 
@@ -32,6 +37,10 @@ public class facade implements facadeLocal
     @EJB EJBCompteClient ejb_compteCli;
     @EJB EJBBanque ejb_banque;
     @EJB EJBMoyenPaiement ejb_typePaiement;
+    @EJB EJBLigneDeStock ejbLigne;
+    @EJB EJBCatalogueFournisseursLocal ejbCatFournisseur;
+    @EJB EJBCommandeReapproLocal ejbCmdFournisseur;
+
     
     /*
      * Méthodes article
@@ -199,6 +208,30 @@ public class facade implements facadeLocal
     public String getTypeCB() 
     {
         return ejb_typePaiement.getTypeCB();
+    }
+    
+    @Override
+    public boolean isEnDessousSeuil(Article article)
+    {
+        return ejbLigne.isEnDessousSeuil(article);
+    }
+
+    @Override
+    public ArticleFournisseur getArticle(Article article, Fournisseur fournisseur)
+    {
+        return ejbCatFournisseur.getArticle(article, fournisseur);
+    }
+
+    @Override
+    public ArticleFournisseur[] getArticles(Article article)
+    {
+        return ejbCatFournisseur.getArticles(article);
+    }
+
+    @Override
+    public void ajouterArticle(ArticleFournisseur article, int qt, int refCommande)
+    {
+        ejbCmdFournisseur.ajouterArticle(article, qt, refCommande);
     }
 
     
