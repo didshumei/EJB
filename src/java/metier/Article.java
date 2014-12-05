@@ -256,4 +256,9 @@ public class Article
             }
         }
     }
+    
+    public void ajouterPanier()
+    {
+        
+    }
 }

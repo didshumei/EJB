@@ -50,4 +50,10 @@ public class EJBCompteClient implements EJBCompteClientLocal
     {
         return compteCli.getMdpCompteClient();
     }
+
+    @Override
+    public String getTelCompteClient() 
+    {
+        return compteCli.getTelCompteClient();
+    }
 }

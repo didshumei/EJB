@@ -15,4 +15,5 @@ public interface EJBBanqueLocal
 {
     int getIdBanque();
     Adresse getAdresseBanque();
+    void valider();
 }

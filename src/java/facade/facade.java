@@ -129,6 +129,12 @@ public class facade implements facadeLocal
     {
         return ejb_art.getIdCategorie();
     }
+    
+    @Override
+    public void ajouterPanier() 
+    {
+        ejb_art.ajouterPanier();
+    }
 
     /*
      * méthodes panier
@@ -212,6 +218,12 @@ public class facade implements facadeLocal
     public Adresse getAdresseBanque() 
     {
         return ejb_banque.getAdresseBanque();
+    }
+    
+    @Override
+    public void valider() 
+    {
+        ejb_banque.valider();
     }
 
     /*
@@ -445,4 +457,8 @@ public class facade implements facadeLocal
     public void setQuantiteLivree(int quantite) {
         ligne.setQuantiteLivree(quantite);
     }
+
+    
+
+    
 }

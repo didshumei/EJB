@@ -19,4 +19,5 @@ public interface EJBCompteClientLocal
     Adresse getAdresseCompteClient();
     String getEmailCompteClient();
     String getMdpCompteClient();
+    String getTelCompteClient();
 }

@@ -27,8 +27,10 @@ public class EJBBanque implements EJBBanqueLocal
         return laBanque.getAdresseBanque();
     }
     
-
-    // Add business logic below. (Right-click in editor and choose
-    // "Insert Code > Add Business Method")
+    @Override
+    public void valider() 
+    {
+        laBanque.valider();
+    }
 
 }

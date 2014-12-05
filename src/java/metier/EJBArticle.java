@@ -80,4 +80,10 @@ public class EJBArticle implements EJBArticleLocal
     {
         return art.getCategorie();
     }    
+
+    @Override
+    public void ajouterPanier() 
+    {
+        art.ajouterPanier();
+    }
 }

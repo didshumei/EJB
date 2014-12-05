@@ -54,5 +54,9 @@ public class Banque
         this.adresseBanque = adresseBanque;
     }
     
+    public void valider()
+    {
+        
+    }
     
 }

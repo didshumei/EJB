@@ -26,5 +26,6 @@ public interface EJBArticleLocal
     String getLienPhoto();
     int getSeuilStockMin();
     Article.EtatArticle getEtatArticle();
+    void ajouterPanier();
     
 }

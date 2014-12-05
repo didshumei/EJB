@@ -36,6 +36,7 @@ public interface facadeLocal
     String getLienPhoto();
     int getSeuilStockMin();
     Article.EtatArticle getEtatArticle();
+    void ajouterPanier();
     
     /*
      * méthodes panier
@@ -64,6 +65,7 @@ public interface facadeLocal
      */
     int getIdBanque();
     Adresse getAdresseBanque();
+    void valider();
     
     /*
      * méthodes MoyenPaiement
