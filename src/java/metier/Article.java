@@ -20,6 +20,29 @@ public class Article
     private int seuilStockMin;
     private EtatArticle etat;
 
+    public Article()
+    {
+        
+    }
+    
+    public Article(int idArticle, Genre genreArticle, float prixArticle, String titreArticle, 
+                  String auteurArticle, String editeurArticle, String descriptionArticle, 
+                  Categorie categorie, String lienPhoto, int seuilStockMin, EtatArticle etat) 
+    {
+        this.idArticle = idArticle;
+        this.genreArticle = genreArticle;
+        this.prixArticle = prixArticle;
+        this.titreArticle = titreArticle;
+        this.auteurArticle = auteurArticle;
+        this.editeurArticle = editeurArticle;
+        this.descriptionArticle = descriptionArticle;
+        this.categorie = categorie;
+        this.lienPhoto = lienPhoto;
+        this.seuilStockMin = seuilStockMin;
+        this.etat = etat;
+    }
+    
+
     /**
      * retourne l'identifiant de l'article.
      */
@@ -139,42 +162,72 @@ public class Article
         this.descriptionArticle = descriptionArticle;
     }
 
-    
-    public Categorie getIdCategorie() 
+    /**
+     * Permet d'obtenir la catégorie d'un article
+     */
+    public Categorie getCategorie() 
     {
         return categorie;
     }
 
-    public void setIdCategorie(Categorie idCategorie) 
+    /**
+     * Permet d'assigner une catégorie à cet article
+     * @param laCategorie 
+     */
+    public void setCategorie(Categorie laCategorie) 
     {
-        this.categorie = idCategorie;
+        this.categorie = laCategorie;
     }
 
+    /**
+     * Permet d'obtenir le lien d'une photo assignée à un article
+     */
     public String getLienPhoto() 
     {
         return lienPhoto;
     }
 
+    /**
+     * Permet d'assigner Une photo à un article
+     * @param lienPhoto est une chaine de caractère contenant le lien
+     */
     public void setLienPhoto(String lienPhoto) 
     {
         this.lienPhoto = lienPhoto;
     }
 
+    /*
+     * Permet d'obtenir le seuil minimum d'un stock. 
+     * Le seuil minimum déclenche la demande de réapprovisionnement
+     */
     public int getSeuilStockMin() 
     {
         return seuilStockMin;
     }
 
+    /**
+     * Permet d'assigner un seuil minimum avant 
+     * déclenchement de la demande de réapprovisionnement
+     * @param seuilStockMin est un entier
+     */
     public void setSeuilStockMin(int seuilStockMin) 
     {
         this.seuilStockMin = seuilStockMin;
     }
     
+    /**
+     * Permet d'obtenir l'état d'un article
+     */
     public EtatArticle getEtatArticle()
     {
         return EtatArticle.Disponible;
     }
     
+    /**
+     * Permet d'assigner un état à un article
+     * @param etat peut être "disponible", "à réapprovisionner",
+     * "en cours", "rupture définitive"
+     */
     public void setEtatArticle(EtatArticle etat)
     {
         if(etat.equals(EtatArticle.Disponible))

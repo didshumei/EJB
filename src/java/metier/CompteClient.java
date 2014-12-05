@@ -13,6 +13,9 @@ public class CompteClient
     private String emailCompteClient;
     private String mdpCompteClient;
 
+    /**
+     * 
+     */
     public int getIdCompteClient() 
     {
         return idCompteClient;
