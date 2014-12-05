@@ -43,15 +43,6 @@ public class EJBCategorie implements EJBCategorieLocal {
         categorie.setReferenceCategorie(referenceCategorie);
     }
 
-    @Override
-    public String getDescriptionCategorie() {
-        return categorie.getDescriptionCategorie();
-    }
-
-    @Override
-    public void setDescriptionCategorie(String descriptionCategorie) {
-        categorie.setDescriptionCategorie(descriptionCategorie);
-    }
     
     @Override
     public void creerGenre(String libelleGenre) {

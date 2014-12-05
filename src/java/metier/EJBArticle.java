@@ -7,7 +7,7 @@ package metier;
 import javax.ejb.Stateless;
 
 /**
- * Contient tous les appels de méthodes de la classe article
+ * Contient tous les appels de méthodes de la classe Article
  * @author gruselle
  */
 @Stateless
@@ -50,7 +50,6 @@ public class EJBArticle implements EJBArticleLocal
     {
         return art.getDescriptionArticle();
     }
-
     
     @Override
     public String getLienPhoto() 
@@ -79,6 +78,6 @@ public class EJBArticle implements EJBArticleLocal
     @Override
     public Categorie getIdCategorie() 
     {
-        return art.getIdCategorie();
+        return art.getCategorie();
     }    
 }
