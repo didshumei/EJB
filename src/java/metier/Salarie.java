@@ -4,39 +4,24 @@
  */
 package metier;
 
-import java.util.List;
-
 /**
  *
  * @author Frontoni
  */
 public class        Salarie
 {
-    int             id;
     String          nom;
     String          prenom;
-    String          login;
-    String          password;
-    List<String>    roles;
-
-    public Salarie(String nom, String prenom, String login, String password)
+    
+    public  Salarie()
+    {
+        
+    }
+    
+    public  Salarie(String nom, String prenom)
     {
         this.nom = nom;
         this.prenom = prenom;
-        this.login = login;
-        this.password = password;
-    }
-
-    public Salarie()
-    {
-    }
-
-    // Il n'y a pas de set pour le nom, le prénom, l'id, le login, le password et pour le rôle
-    // Il n'y a de de get pour le login et le password
-
-    public int getId()
-    {
-        return id;
     }
 
     public String getNom()
@@ -44,25 +29,19 @@ public class        Salarie
         return nom;
     }
 
+    public void setNom(String nom)
+    {
+        this.nom = nom;
+    }
+
     public String getPrenom()
     {
         return prenom;
     }
 
-    public List<String> getRoles()
+    public void setPrenom(String prenom)
     {
-        return roles;
+        this.prenom = prenom;
     }
-    
-    public boolean  seConnecter(String loginEntre, String passwordEntre)
-    {
-        boolean     ok = false;
-        
-        return (ok);
-    }
-    
-    public boolean seDeconnecter()
-    {
-        return (true);
-    }
+
 }

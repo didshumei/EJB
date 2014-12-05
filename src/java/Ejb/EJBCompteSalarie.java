@@ -2,20 +2,27 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package metier;
+package Ejb;
 
+import interfaces.EJBCompteSalarieLocal;
 import java.util.List;
 import javax.ejb.Stateless;
+import metier.CompteSalarie;
 
 /**
  *
  * @author Frontoni
  */
 @Stateless
-public class EJBSalarie implements EJBSalarieLocal
+public class EJBCompteSalarie implements EJBCompteSalarieLocal
 {
-    Salarie salarie = new Salarie(); // Comment rendre ces fonctions à tous les types d'EJB Salariés ?
+    CompteSalarie salarie;
 
+    public EJBCompteSalarie()
+    {
+        salarie = new CompteSalarie();
+    }
+    
     @Override
     public int getId()
     {
@@ -50,5 +57,17 @@ public class EJBSalarie implements EJBSalarieLocal
     public boolean seDeconnecter()
     {
         return (salarie.seDeconnecter());
+    }
+
+    @Override
+    public void setNom(String nom)
+    {
+        salarie.setNom(nom);
+    }
+
+    @Override
+    public void setPrenom(String prenom)
+    {
+        salarie.setPrenom(prenom);
     }
 }
