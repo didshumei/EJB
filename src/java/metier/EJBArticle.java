@@ -51,13 +51,7 @@ public class EJBArticle implements EJBArticleLocal
         return art.getDescriptionArticle();
     }
 
-    @Override
-    public int getIdGenre() 
-    {
-        return art.getIdGenre();
-    }
-
-
+    
     @Override
     public String getLienPhoto() 
     {

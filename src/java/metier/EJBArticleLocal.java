@@ -22,7 +22,6 @@ public interface EJBArticleLocal
     String getAuteurArticle();
     String getEditeurArticle();
     String getDescriptionArticle();
-    int getIdGenre();
     Categorie getIdCategorie();
     String getLienPhoto();
     int getSeuilStockMin();
