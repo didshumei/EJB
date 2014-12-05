@@ -4,7 +4,7 @@
  */
 package metier;
 
-import com.sun.xml.rpc.processor.modeler.j2ee.xml.string;
+
 
 /**
  *
@@ -17,16 +17,17 @@ public class Administrateur extends Salarie
         super();
     }
     
-    public boolean   creerCompte(string nom, string prenom, string login, string password)
+    public boolean creerCompte(String nom, String prenom, String login, String password)
     {
-        return (true);
+        
+        return true;
     }
     
-    public boolean  ajouterUnRole(Salarie salarier, string unRole)
+    public boolean  ajouterUnRole(Salarie salarie, String unRole)
     {
         return true;
     }
-     public boolean  supprimerUnRole(Salarie salarier, string unRole)
+     public boolean  supprimerUnRole(Salarie salarie, String unRole)
     {
         return true;
     }
