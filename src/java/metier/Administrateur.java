@@ -4,13 +4,13 @@
  */
 package metier;
 
-
+import java.util.Date;
 
 /**
  *
  * @author Frontoni
  */
-public class Administrateur extends Salarie
+public class Administrateur extends CompteSalarie
 {
     public Administrateur()
     {
@@ -32,6 +32,21 @@ public class Administrateur extends Salarie
         return true;
     }
     public boolean  desactiverUnCompte(Salarie salarie)
+    {
+        return true;
+    }
+    
+    public boolean  modificationFrequencePurge(int nbJours)
+    {
+        return true;
+    }
+    
+    public boolean  modificationDatePurge(Date date)
+    {
+        return true;
+    }
+    
+    public boolean  dureeSauvegardeArchive(int nbMois)
     {
         return true;
     }
