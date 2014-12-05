@@ -1,11 +1,7 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package metier;
 
 /**
- *
+ * Représente les différentes informations d'un compte client
  * @author gruselle
  */
 public class CompteClient 

@@ -7,11 +7,13 @@ package metier;
 import javax.ejb.Local;
 
 /**
- *
+ * 
+ * 
  * @author gruselle
  */
 @Local
-public interface EJBArticleLocal {
+public interface EJBArticleLocal 
+{
 
     int getIdArticle();
     Genre getGenreArticle();
@@ -24,6 +26,6 @@ public interface EJBArticleLocal {
     Categorie getIdCategorie();
     String getLienPhoto();
     int getSeuilStockMin();
-    Article.etatArticle getEtatArticle();
+    Article.EtatArticle getEtatArticle();
     
 }

@@ -16,6 +16,7 @@ public class EJBCheque implements EJBChequeLocal {
     
     private Cheque cheque;
     
+    //Constructeur
     public EJBCheque() {
         cheque = new Cheque();
     }
@@ -38,6 +39,5 @@ public class EJBCheque implements EJBChequeLocal {
     @Override
     public void setNumero(String numero) {
         cheque.setNumero(numero);
-    }
-
+    }   
 }

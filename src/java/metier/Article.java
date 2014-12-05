@@ -1,16 +1,12 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package metier;
 
 /**
- *
  * @author gruselle
+ * Représente tous les attributs d'un article
  */
 public class Article 
 {
-    public enum etatArticle{Disponible, A_Reapprovisionner, En_Cours_De_Reapprovisionnement, Sorti_Du_Catalogue};
+    public enum EtatArticle{Disponible, A_Reapprovisionner, En_Cours_De_Reapprovisionnement, Sorti_Du_Catalogue};
     
     private int idArticle;
     private Genre genreArticle;
@@ -23,7 +19,7 @@ public class Article
     private Categorie categorie;
     private String lienPhoto;
     private int seuilStockMin;
-    private etatArticle etat;
+    private EtatArticle etat;
 
     public int getIdArticle() 
     {
@@ -135,32 +131,32 @@ public class Article
         this.seuilStockMin = seuilStockMin;
     }
     
-    public etatArticle getEtatArticle()
+    public EtatArticle getEtatArticle()
     {
-        return etatArticle.Disponible;
+        return EtatArticle.Disponible;
     }
     
-    public void setEtatArticle(etatArticle etat)
+    public void setEtatArticle(EtatArticle etat)
     {
-        if(etat.equals(etatArticle.Disponible))
+        if(etat.equals(EtatArticle.Disponible))
         {
             
         }
         else
         {
-            if(etat.equals(etatArticle.A_Reapprovisionner))
+            if(etat.equals(EtatArticle.A_Reapprovisionner))
             {
                 
             }
             else
             {
-                if(etat.equals(etatArticle.En_Cours_De_Reapprovisionnement))
+                if(etat.equals(EtatArticle.En_Cours_De_Reapprovisionnement))
                 {
                     
                 }
                 else
                 {
-                    if(etat.equals(etatArticle.Sorti_Du_Catalogue))
+                    if(etat.equals(EtatArticle.Sorti_Du_Catalogue))
                     {
                         
                     }
