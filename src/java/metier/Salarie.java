@@ -14,7 +14,7 @@ public class        Salarie
 {
     int             id;
     String          nom;
-    String          prénom;
+    String          prenom;
     String          login;
     String          password;
     List<String>    roles;
@@ -22,7 +22,7 @@ public class        Salarie
     public Salarie(String nom, String prénom, String login, String password)
     {
         this.nom = nom;
-        this.prénom = prénom;
+        this.prenom = prénom;
         this.login = login;
         this.password = password;
     }
@@ -46,7 +46,7 @@ public class        Salarie
 
     public String getPrenom()
     {
-        return prénom;
+        return prenom;
     }
 
     public List<String> getRoles()
