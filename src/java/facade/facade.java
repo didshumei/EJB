@@ -82,12 +82,6 @@ public class facade implements facadeLocal
     }
 
     @Override
-    public int getIdGenre() 
-    {
-        return ejb_art.getIdGenre();
-    }
-
-    @Override
     public String getLienPhoto() 
     {
         return ejb_art.getLienPhoto();
