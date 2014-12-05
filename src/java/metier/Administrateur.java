@@ -17,7 +17,7 @@ public class Administrateur extends Salarie
         super();
     }
     
-    public boolean   creerCompte(string nom, string prénom, string login, string password)
+    public boolean   creerCompte(string nom, string prenom, string login, string password)
     {
         return (true);
     }

@@ -19,10 +19,10 @@ public class        Salarie
     String          password;
     List<String>    roles;
 
-    public Salarie(String nom, String prénom, String login, String password)
+    public Salarie(String nom, String prenom, String login, String password)
     {
         this.nom = nom;
-        this.prenom = prénom;
+        this.prenom = prenom;
         this.login = login;
         this.password = password;
     }
