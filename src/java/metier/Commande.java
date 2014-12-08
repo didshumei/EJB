@@ -17,6 +17,7 @@ import java.util.Date;
  */
 public class Commande {
     
+    //etatCommande : Passée, Rejetée, Validée, Envoyée, Attente, Annulée Client, Annulée Stock, Livrée
     private int idClient;
     private Date dateCommande;
     private float totalCommande;
