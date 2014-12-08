@@ -11,7 +11,7 @@ package metier;
 public class Genre {
     
     private int idGenre;
-    private String titreGenre;
+    private String nomGenre;
     private String referenceGenre;
 
     public int getIdGenre() {
@@ -22,12 +22,12 @@ public class Genre {
         this.idGenre = idGenre;
     }
 
-    public String getTitreGenre() {
-        return titreGenre;
+    public String getNomGenre() {
+        return nomGenre;
     }
 
-    public void setTitreGenre(String titreGenre) {
-        this.titreGenre = titreGenre;
+    public void setNomGenre(String titreGenre) {
+        this.nomGenre = titreGenre;
     }
 
     public String getReferenceGenre() {

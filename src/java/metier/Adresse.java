@@ -10,10 +10,37 @@ package metier;
  */
 public class Adresse
 {
+    private int idAdresse;
+    private int idClient;
     private int numRue;
     private String nomRue;
     private String codePostal;
-    private String Ville;
+    private String ville;
+
+    
+    /*
+    * Cette methode permet d'obtenir l'id de l'adresse
+    * @return idAdresse qui est l'id de l'adresse
+    */
+    public int getIdAdresse() {
+        return idAdresse;
+    }
+    
+    /*
+    * Cette methode permet d'obtenir l'id du client ayant cette adresse
+    * @return idClient qui est l'id du client domicilie a cette adresse
+    */
+    public int getIdClient() {
+        return idClient;
+    }
+
+      /*
+    * Cette methode permet de définir l'id du client ayant cette adresse
+    * @param idClient qui est l'id du client domicilie a cette adresse
+    */
+    public void setIdClient(int idClient) {
+        this.idClient = idClient;
+    }
 
     public int getNumRue()
     {
@@ -47,11 +74,11 @@ public class Adresse
 
     public String getVille()
     {
-        return Ville;
+        return ville;
     }
 
     public void setVille(String Ville)
     {
-        this.Ville = Ville;
+        this.ville = Ville;
     }
 }

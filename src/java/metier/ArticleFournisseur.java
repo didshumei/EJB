@@ -13,6 +13,23 @@ public class ArticleFournisseur
     private Article article;
     private Fournisseur fournisseur;
     private int idArticleFournisseur;
+    private int seuilMinDeCommande;
+
+    public int getIdArticleFournisseur() {
+        return idArticleFournisseur;
+    }
+
+    public void setIdArticleFournisseur(int idArticleFournisseur) {
+        this.idArticleFournisseur = idArticleFournisseur;
+    }
+
+    public int getSeuilMinDeCommande() {
+        return seuilMinDeCommande;
+    }
+
+    public void setSeuilMinDeCommande(int seuilMinDeCommande) {
+        this.seuilMinDeCommande = seuilMinDeCommande;
+    }
 
     public ArticleFournisseur(Article article, Fournisseur fournisseur,
             int idArtFournisseur)

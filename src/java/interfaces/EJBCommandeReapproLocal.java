@@ -5,7 +5,7 @@
 package interfaces;
 
 import javax.ejb.Local;
-import metier.ArticleFournisseur;
+import metier.Article;
 
 /**
  *
@@ -21,5 +21,5 @@ public interface EJBCommandeReapproLocal
      * @param refCommande la référence de la commande dans laquelle ajouter
      * l'article
      */
-    public void ajouterArticle(ArticleFournisseur article, int qt, int refCommande);
+    public void ajouterArticle(Article article, int qt, int refCommande);
 }

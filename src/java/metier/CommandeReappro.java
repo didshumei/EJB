@@ -5,6 +5,7 @@
 package metier;
 
 import java.util.ArrayList;
+import java.util.Date;
 
 /**
  *
@@ -13,8 +14,7 @@ import java.util.ArrayList;
 public class CommandeReappro
 {
     private ArrayList<LigneCommandeReappro> lignes;
-    private String date;
-    private double montant;
+    private Date date;
     private int idCommande;
 
     public CommandeReappro()
@@ -27,24 +27,14 @@ public class CommandeReappro
         idCommande = id;
     }
 
-    public String getDate()
+    public Date getDate()
     {
         return date;
     }
 
-    public void setDate(String date)
+    public void setDate(Date date)
     {
         this.date = date;
-    }
-
-    public double getMontant()
-    {
-        return montant;
-    }
-
-    public void setMontant(double montant)
-    {
-        this.montant = montant;
     }
 
     public int getIdCommande()

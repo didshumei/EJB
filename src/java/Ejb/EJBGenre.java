@@ -31,13 +31,13 @@ public class EJBGenre implements EJBGenreLocal {
     }
 
     @Override
-    public String getTitreGenre() {
-        return genre.getTitreGenre();
+    public String getNomGenre() {
+        return genre.getNomGenre();
     }
 
     @Override
-    public void setTitreGenre(String titreGenre) {
-        genre.setTitreGenre(titreGenre);
+    public void setNomGenre(String titreGenre) {
+        genre.setNomGenre(titreGenre);
     }
 
     @Override

@@ -117,7 +117,7 @@ public interface facadeLocal
      * @param refCommande la référence de la commande dans laquelle ajouter
      * l'article
      */
-    public void ajouterArticle(ArticleFournisseur article, int qt, int refCommande);
+    public void ajouterArticle(Article article, int qt, int refCommande);
 
 /*
         METHODES CATALOGUE
@@ -140,8 +140,8 @@ public interface facadeLocal
     */
     int getIdGenre();
     void setIdGenre(int idGenre);
-    String getTitreGenre();
-    void setTitreGenre(String titreGenre);
+    String getNomGenre();
+    void setNomGenre(String titreGenre);
     String getReferenceGenre();
     void setReferenceGenre(String referenceGenre);
     void creerGenre(String libelleGenre);

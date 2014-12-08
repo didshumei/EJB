@@ -10,7 +10,7 @@ package metier;
  */
 public class LigneCommandeReappro
 {
-    private ArticleFournisseur article;
+    private Article article;
     private int quantite;
 
     public LigneCommandeReappro()
@@ -18,17 +18,17 @@ public class LigneCommandeReappro
         
     }
 
-    public LigneCommandeReappro(ArticleFournisseur article, int quantite)
+    public LigneCommandeReappro(Article article, int quantite)
     {
         setArticle(article);
     }
     
-    public ArticleFournisseur getArticle()
+    public Article getArticle()
     {
         return article;
     }
 
-    public void setArticle(ArticleFournisseur article)
+    public void setArticle(Article article)
     {
         this.article = article;
     }
