@@ -2,9 +2,12 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package metier;
+package interfaces;
 
 import javax.ejb.Local;
+import metier.Article;
+import metier.Categorie;
+import metier.Genre;
 
 /**
  * 

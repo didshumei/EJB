@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package metier;
+package interfaces;
 
 import javax.ejb.Local;
 
@@ -12,9 +12,9 @@ import javax.ejb.Local;
  * @author sylvainbron
  */
 @Local
-public interface EJBLettreLocal {
+public interface EJBBordereauLivraisonLocal {
     
-    String getContenu();
-    void setContenu(String contenu);
-    
+    public String getContenu();
+    public void setContenu(String contenu);
+    public void remplirContenu();
 }

@@ -2,9 +2,11 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package metier;
+package Ejb;
 
+import interfaces.EJBMoyenPaiementLocal;
 import javax.ejb.Stateless;
+import metier.MoyenPaiement;
 
 /**
  *

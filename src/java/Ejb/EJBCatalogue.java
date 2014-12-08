@@ -3,11 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package metier;
+package Ejb;
 
+import interfaces.EJBCatalogueLocal;
 import java.util.ArrayList;
 import javax.ejb.EJB;
 import javax.ejb.Stateless;
+import metier.Article;
 
 /**
  *

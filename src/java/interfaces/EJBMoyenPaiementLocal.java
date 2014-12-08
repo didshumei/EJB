@@ -2,9 +2,8 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package metier;
+package interfaces;
 
-import java.util.ArrayList;
 import javax.ejb.Local;
 
 /**
@@ -12,8 +11,7 @@ import javax.ejb.Local;
  * @author gruselle
  */
 @Local
-public interface EJBPanierLocal 
+public interface EJBMoyenPaiementLocal 
 {
-    int getIdPanier();
-    ArrayList<LignePanier> getLignePanier();
+    String getTypeCB();
 }

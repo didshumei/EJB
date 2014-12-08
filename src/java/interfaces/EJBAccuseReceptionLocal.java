@@ -3,8 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package metier;
+package interfaces;
 
+import java.util.Date;
 import javax.ejb.Local;
 
 /**
@@ -12,14 +13,9 @@ import javax.ejb.Local;
  * @author sylvainbron
  */
 @Local
-public interface EJBChequeLocal {
+public interface EJBAccuseReceptionLocal {
     
-    public float getMontant();
-
-    public void setMontant(float montant);
-
-    public String getNumero();
-
-    public void setNumero(String numero);
+    Date getDateReception(); 
+    void setDateReception(Date dateReception);
     
 }

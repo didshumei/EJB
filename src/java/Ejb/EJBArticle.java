@@ -2,9 +2,13 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package metier;
+package Ejb;
 
+import interfaces.EJBArticleLocal;
 import javax.ejb.Stateless;
+import metier.Article;
+import metier.Categorie;
+import metier.Genre;
 
 /**
  * Contient tous les appels de méthodes de la classe Article
