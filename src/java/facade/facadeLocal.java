@@ -193,5 +193,21 @@ public interface facadeLocal
     void setSstotal(float sstotal);
     boolean isIsARembourser();
     void setIsARembourser(boolean isARembourser);
+    
+    /*
+    * METHODES COMMANDE
+    */
+    int getIdClientCommande();
+    void setIdClientCommande(int idClient);
+    Date getDateCommande();
+    void setDateCommande(Date dateCommande);
+    float getTotalCommande();
+    void setTotalCommande(float totalCommande);
+    int getStatutCommande();
+    void setStatutCommande(int statutCommande);
+    String getAccuseCommande();
+    void setAccuseCommande(String urlAccuseCommande);
+    Date getDateRembCommande();
+    void setDateRembCommande(Date dateRembCommande);
 
 }

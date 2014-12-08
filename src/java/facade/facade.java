@@ -4,6 +4,22 @@
  */
 package facade;
 
+import Ejb.EJBAccuseReception;
+import Ejb.EJBArticle;
+import Ejb.EJBBanque;
+import Ejb.EJBBordereauLivraison;
+import Ejb.EJBCatalogue;
+import Ejb.EJBCategorie;
+import Ejb.EJBCheque;
+import Ejb.EJBCommandeClient;
+import Ejb.EJBCompteClient;
+import Ejb.EJBGenre;
+import Ejb.EJBLettre;
+import Ejb.EJBLigneCommande;
+import Ejb.EJBLignePanier;
+import Ejb.EJBMoyenPaiement;
+import Ejb.EJBPanier;
+import Ejb.EJBRemboursement;
 import interfaces.EJBCatalogueFournisseursLocal;
 import interfaces.EJBCommandeReapproLocal;
 import java.util.ArrayList;
@@ -14,21 +30,6 @@ import metier.Adresse;
 import metier.Article;
 import metier.ArticleFournisseur;
 import metier.Categorie;
-import Ejb.EJBAccuseReception;
-import Ejb.EJBArticle;
-import Ejb.EJBBanque;
-import Ejb.EJBBordereauLivraison;
-import Ejb.EJBCatalogue;
-import Ejb.EJBCategorie;
-import Ejb.EJBCheque;
-import Ejb.EJBCompteClient;
-import Ejb.EJBGenre;
-import Ejb.EJBLettre;
-import Ejb.EJBLigneCommande;
-import Ejb.EJBLignePanier;
-import Ejb.EJBMoyenPaiement;
-import Ejb.EJBPanier;
-import Ejb.EJBRemboursement;
 import metier.Fournisseur;
 import metier.Genre;
 import metier.LignePanier;
@@ -59,6 +60,7 @@ public class facade implements facadeLocal
     @EJB EJBLettre lettre;
     @EJB EJBAccuseReception accuse;
     @EJB EJBLigneCommande ligne;
+    @EJB EJBCommandeClient commande;
     
     /*
      * Méthodes article
@@ -518,6 +520,66 @@ public class facade implements facadeLocal
     @Override
     public void setQuantiteLivree(int quantite) {
         ligne.setQuantiteLivree(quantite);
+    }
+
+    @Override
+    public int getIdClientCommande() {
+        return commande.getIdClient();
+    }
+
+    @Override
+    public void setIdClientCommande(int idClient) {
+        commande.setIdClient(idClient);
+    }
+
+    @Override
+    public Date getDateCommande() {
+        return commande.getDateCommande();
+    }
+
+    @Override
+    public void setDateCommande(Date dateCommande) {
+        commande.setDateCommande(dateCommande);
+    }
+
+    @Override
+    public float getTotalCommande() {
+        return commande.getTotalCommande();
+    }
+
+    @Override
+    public void setTotalCommande(float totalCommande) {
+        commande.setTotalCommande(totalCommande);
+    }
+
+    @Override
+    public int getStatutCommande() {
+        return commande.getStatutCommande();
+    }
+
+    @Override
+    public void setStatutCommande(int statutCommande) {
+        commande.setStatutCommande(statutCommande);
+    }
+
+    @Override
+    public String getAccuseCommande() {
+        return commande.getAccuseCommande();
+    }
+
+    @Override
+    public void setAccuseCommande(String urlAccuseCommande) {
+        commande.setAccuseCommande(urlAccuseCommande);
+    }
+
+    @Override
+    public Date getDateRembCommande() {
+        return commande.getDateCommande();
+    }
+
+    @Override
+    public void setDateRembCommande(Date dateRembCommande) {
+        commande.setDateRembCommande(dateRembCommande);
     }
 
     
