@@ -21,7 +21,7 @@ public class Commande {
     private Date dateCommande;
     private float totalCommande;
     private int statutCommande;
-    private Image accuseCommande;
+    private String accuseCommande;
     private Date dateRembCommande;
     private ArrayList<LigneCommande> lignesCommande;
     
@@ -62,12 +62,12 @@ public class Commande {
         this.statutCommande = statutCommande;
     }
 
-    public Image getAccuseCommande() {
+    public String getAccuseCommande() {
         return accuseCommande;
     }
 
-    public void setAccuseCommande(Image accuseCommande) {
-        this.accuseCommande = accuseCommande;
+    public void setAccuseCommande(String urlAccuseCommande) {
+        this.accuseCommande = urlAccuseCommande;
     }
 
     public Date getDateRembCommande() {
