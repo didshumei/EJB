@@ -254,7 +254,7 @@ public class facade implements facadeLocal
     }
 
     @Override
-    public void ajouterArticle(ArticleFournisseur article, int qt, int refCommande)
+    public void ajouterArticle(Article article, int qt, int refCommande)
     {
         ejbCmdFournisseur.ajouterArticle(article, qt, refCommande);
     }

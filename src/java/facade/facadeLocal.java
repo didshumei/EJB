@@ -107,7 +107,7 @@ public interface facadeLocal
      * @param refCommande la référence de la commande dans laquelle ajouter
      * l'article
      */
-    public void ajouterArticle(ArticleFournisseur article, int qt, int refCommande);
+    public void ajouterArticle(Article article, int qt, int refCommande);
 
 /*
         METHODES CATALOGUE
