@@ -10,11 +10,30 @@ package metier;
  * @author sylvainbron
  */
 public class LigneCommande {
+    private int idArticle;
+    private int idCommande;
     private int quantiteCommande;
     private int quantiteLivree;
     private float sstotal;
     private boolean isARembourser;
 
+    
+    public int getIdArticle() {
+        return idArticle;
+    }
+
+    public void setIdArticle(int idArticle) {
+        this.idArticle = idArticle;
+    }
+
+    public int getIdCommande() {
+        return idCommande;
+    }
+
+    public void setIdCommande(int idCommande) {
+        this.idCommande = idCommande;
+    }
+    
     public int getQuantiteCommande() {
         return quantiteCommande;
     }
