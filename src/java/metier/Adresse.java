@@ -10,6 +10,8 @@ package metier;
  */
 public class Adresse
 {
+    private int idAdresse;
+    private int idClient;
     private int numRue;
     private String nomRue;
     private String codePostal;
