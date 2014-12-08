@@ -17,6 +17,11 @@ public class Magasinier extends CompteSalarie
     {
     }
     
+    public boolean  recupererArticles() // Ajouter dans les EJB
+    {
+        return true;
+    }
+    
     public boolean  mettreAJourStocks(int idArticle, int quantitéAjoutee)
     {
         return true;

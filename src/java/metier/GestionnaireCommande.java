@@ -14,6 +14,11 @@ public class GestionnaireCommande extends CompteSalarie
     {
     }
     
+    public boolean  modifierStatutCommande() // Ajouter dans les EJB
+    {
+        return true;
+    }
+    
     public boolean  mettreEnRemboursement(int idLigneCommande)
     {
         return true;

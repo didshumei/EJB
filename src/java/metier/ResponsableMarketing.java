@@ -16,6 +16,16 @@ public class ResponsableMarketing extends CompteSalarie
     {
     }
     
+    public boolean  recupererArticles() // Ajouter dans les EJB
+    {
+        return true;
+    }
+    
+    public boolean recupererPromos() // Ajouter dans les EJB
+    {
+        return true;
+    }
+    
     public boolean  creerPromotion(Date dateDebut, Date dateFin, float prix)
     {
         return true;

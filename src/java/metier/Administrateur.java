@@ -17,9 +17,13 @@ public class Administrateur extends CompteSalarie
         super();
     }
     
-    public boolean creerCompte(String nom, String prenom, String login, String password)
+    public boolean  recuperUtilisateurs() // Ajouter dans les EJB
     {
-        
+        return true;
+    }
+    
+    public boolean  creerCompte(String nom, String prenom, String login, String password)
+    {
         return true;
     }
     
