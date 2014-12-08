@@ -6,7 +6,7 @@ package Ejb;
 
 import interfaces.EJBCommandeReapproLocal;
 import javax.ejb.Stateless;
-import metier.ArticleFournisseur;
+import metier.Article;
 import metier.CommandeReappro;
 import metier.LigneCommandeReappro;
 
@@ -18,7 +18,7 @@ import metier.LigneCommandeReappro;
 public class EJBCommandeReappro implements EJBCommandeReapproLocal
 {
     @Override
-    public void ajouterArticle(ArticleFournisseur article, int qt, int refCommande)
+    public void ajouterArticle(Article article, int qt, int refCommande)
     {
         LigneCommandeReappro ligne = new LigneCommandeReappro(article, qt);
         CommandeReappro commande = new CommandeReappro(refCommande);
