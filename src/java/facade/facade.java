@@ -4,7 +4,6 @@
  */
 package facade;
 
-import Ejb.EJBLigneDeStock;
 import interfaces.EJBCatalogueFournisseursLocal;
 import interfaces.EJBCommandeReapproLocal;
 import java.util.ArrayList;
@@ -47,7 +46,7 @@ public class facade implements facadeLocal
     @EJB EJBCompteClient ejb_compteCli;
     @EJB EJBBanque ejb_banque;
     @EJB EJBMoyenPaiement ejb_typePaiement;
-    @EJB EJBLigneDeStock ejbLigne;
+
     @EJB EJBCatalogueFournisseursLocal ejbCatFournisseur;
     @EJB EJBCommandeReapproLocal ejbCmdFournisseur;
     //Sylvain
@@ -238,7 +237,8 @@ public class facade implements facadeLocal
     @Override
     public boolean isEnDessousSeuil(Article article)
     {
-        return ejbLigne.isEnDessousSeuil(article);
+        //TODO A faire : plus d EJB LigneDeStock!
+        return false;
     }
 
     @Override
@@ -313,13 +313,13 @@ public class facade implements facadeLocal
     }
 
     @Override
-    public String getTitreGenre() {
-        return genre.getTitreGenre();
+    public String getNomGenre() {
+        return genre.getNomGenre();
     }
 
     @Override
-    public void setTitreGenre(String titreGenre) {
-        genre.setTitreGenre(titreGenre);
+    public void setNomGenre(String titreGenre) {
+        genre.setNomGenre(titreGenre);
     }
 
     @Override

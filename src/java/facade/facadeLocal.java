@@ -130,8 +130,8 @@ public interface facadeLocal
     */
     int getIdGenre();
     void setIdGenre(int idGenre);
-    String getTitreGenre();
-    void setTitreGenre(String titreGenre);
+    String getNomGenre();
+    void setNomGenre(String titreGenre);
     String getReferenceGenre();
     void setReferenceGenre(String referenceGenre);
     void creerGenre(String libelleGenre);

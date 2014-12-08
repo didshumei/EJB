@@ -18,9 +18,9 @@ public interface EJBGenreLocal {
 
     void setIdGenre(int idGenre);
 
-    String getTitreGenre();
+    String getNomGenre();
 
-    void setTitreGenre(String titreGenre);
+    void setNomGenre(String titreGenre);
 
     String getReferenceGenre();
 
