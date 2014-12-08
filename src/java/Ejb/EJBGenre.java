@@ -52,7 +52,7 @@ public class EJBGenre implements EJBGenreLocal {
 
     @Override
     public void creerGenre(String libelleGenre) {
-        
+        genre.creerGenre();
     }
     
     

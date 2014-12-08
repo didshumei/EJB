@@ -144,5 +144,38 @@ public class CompteClient
         this.telCompteClient = telCompteClient;
     }
     
+    public void creerCompteClient()
+    {
+        
+    }
     
+    public void modifierCompteClient()
+    {
+        
+    }
+    
+    public void ajouterAdresse()
+    {
+        
+    }
+    
+    public void modifierAdresse()
+    {
+        
+    }
+    
+    public void supprimerAdresse()
+    {
+        
+    }
+    
+    public void seConnecter()
+    {
+        
+    }
+    
+    public void seDeconnecter()
+    {
+        
+    }
 }

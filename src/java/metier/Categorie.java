@@ -53,5 +53,10 @@ public class Categorie
     {
         this.referenceCategorie = referenceCategorie;
     }
+    
+    public void creerCategorie()
+    {
+        
+    }
 
 }

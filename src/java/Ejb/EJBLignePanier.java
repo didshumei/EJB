@@ -31,6 +31,18 @@ public class EJBLignePanier implements EJBLignePanierLocal
     {
         return lignePan.getSommeIntermediaire();
     }
+
+    @Override
+    public float getPrixUnitaire() 
+    {
+        return lignePan.getPrixUnitaire();
+    }
+
+    @Override
+    public void setPrixUnitaire(float prixUnitaire) 
+    {
+        lignePan.setPrixUnitaire(prixUnitaire);
+    }
     
     
 }

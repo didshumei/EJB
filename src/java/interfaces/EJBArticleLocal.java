@@ -30,5 +30,6 @@ public interface EJBArticleLocal
     int getSeuilStockMin();
     Article.EtatArticle getEtatArticle();
     void ajouterPanier();
+    void isEnDessousSeuilMini();
     
 }

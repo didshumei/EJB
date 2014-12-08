@@ -15,10 +15,13 @@ public class Article
     private String auteurArticle;
     private String editeurArticle;
     private String descriptionArticle;
-    private Categorie categorie;
+    private Categorie categorieArticle;
     private String lienPhoto;
     private int seuilStockMin;
     private EtatArticle etat;
+    private int idGenre;
+    private int idCategorie;
+    private int quantiteEnStock;
 
     public Article()
     {
@@ -36,10 +39,50 @@ public class Article
         this.auteurArticle = auteurArticle;
         this.editeurArticle = editeurArticle;
         this.descriptionArticle = descriptionArticle;
-        this.categorie = categorie;
+        this.categorieArticle = categorie;
         this.lienPhoto = lienPhoto;
         this.seuilStockMin = seuilStockMin;
         this.etat = etat;
+    }
+
+    public int getQuantiteEnStock() 
+    {
+        return quantiteEnStock;
+    }
+
+    public void setQuantiteEnStock(int quantiteEnStock) 
+    {
+        this.quantiteEnStock = quantiteEnStock;
+    }
+
+    public EtatArticle getEtat() 
+    {
+        return etat;
+    }
+
+    public void setEtat(EtatArticle etat) 
+    {
+        this.etat = etat;
+    }
+
+    public int getIdGenre() 
+    {
+        return idGenre;
+    }
+
+    public void setIdGenre(int idGenre) 
+    {
+        this.idGenre = idGenre;
+    }
+
+    public int getIdCategorie() 
+    {
+        return idCategorie;
+    }
+
+    public void setIdCategorie(int idCategorie) 
+    {
+        this.idCategorie = idCategorie;
     }
     
 
@@ -165,18 +208,18 @@ public class Article
     /**
      * Permet d'obtenir la catégorie d'un article
      */
-    public Categorie getCategorie() 
+    public Categorie getCategorieArticle() 
     {
-        return categorie;
+        return categorieArticle;
     }
 
     /**
      * Permet d'assigner une catégorie à cet article
      * @param laCategorie 
      */
-    public void setCategorie(Categorie laCategorie) 
+    public void setCategorieArticle(Categorie laCategorie) 
     {
-        this.categorie = laCategorie;
+        this.categorieArticle = laCategorie;
     }
 
     /**
@@ -258,6 +301,11 @@ public class Article
     }
     
     public void ajouterPanier()
+    {
+        
+    }
+    
+    public void isEnDessousSeuilMini()
     {
         
     }

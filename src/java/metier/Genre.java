@@ -38,4 +38,9 @@ public class Genre {
         this.referenceGenre = referenceGenre;
     }
     
+    public void creerGenre()
+    {
+        
+    }
+    
 }

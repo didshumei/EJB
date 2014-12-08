@@ -134,6 +134,13 @@ public class facade implements facadeLocal
     {
         ejb_art.ajouterPanier();
     }
+    
+     @Override
+    public void isEnDessousSeuilMini() 
+     {
+        ejb_art.isEnDessousSeuilMini();
+    }
+
 
     /*
      * méthodes panier
@@ -164,6 +171,19 @@ public class facade implements facadeLocal
     {
         return ejb_lignePan.getSommeIntermediaire();
     }
+    
+    @Override
+    public float getPrixUnitaire() 
+    {
+        return ejb_lignePan.getPrixUnitaire();
+    }
+
+    @Override
+    public void setPrixUnitaire(float prixUnitaire) 
+    {
+        ejb_lignePan.setPrixUnitaire(prixUnitaire);
+    }
+
     
     /*
      * méthodes compteClient
@@ -203,6 +223,48 @@ public class facade implements facadeLocal
     {
         return ejb_compteCli.getMdpCompteClient();
     }    
+    
+    @Override
+    public void creerCompteClient() 
+    {
+        ejb_compteCli.creerCompteClient();
+    }
+
+    @Override
+    public void modifierCompteClient() 
+    {
+        ejb_compteCli.modifierCompteClient();
+    }
+
+    @Override
+    public void ajouterAdresse() 
+    {
+        ejb_compteCli.ajouterAdresse();
+    }
+
+    @Override
+    public void modifierAdresse() 
+    {
+        ejb_compteCli.modifierAdresse();
+    }
+
+    @Override
+    public void supprimerAdresse() 
+    {
+        ejb_compteCli.supprimerAdresse();
+    }
+
+    @Override
+    public void seConnecter() 
+    {
+        ejb_compteCli.seConnecter();
+    }
+
+    @Override
+    public void seDeconnecter() 
+    {
+        ejb_compteCli.seDeconnecter();
+    }
 
     /*
      * méthodes Banque
@@ -458,6 +520,10 @@ public class facade implements facadeLocal
         ligne.setQuantiteLivree(quantite);
     }
 
+    
+
+    
+   
     
 
     

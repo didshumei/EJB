@@ -82,12 +82,18 @@ public class EJBArticle implements EJBArticleLocal
     @Override
     public Categorie getIdCategorie() 
     {
-        return art.getCategorie();
+        return art.getCategorieArticle();
     }    
 
     @Override
     public void ajouterPanier() 
     {
         art.ajouterPanier();
+    }
+
+    @Override
+    public void isEnDessousSeuilMini() 
+    {
+        art.isEnDessousSeuilMini();
     }
 }

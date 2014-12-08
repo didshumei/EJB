@@ -37,6 +37,7 @@ public interface facadeLocal
     int getSeuilStockMin();
     Article.EtatArticle getEtatArticle();
     void ajouterPanier();
+    void isEnDessousSeuilMini();
     
     /*
      * méthodes panier
@@ -49,6 +50,8 @@ public interface facadeLocal
      */
     int getQuantite();
     float getSommeIntermediaire();
+    float getPrixUnitaire();
+    void setPrixUnitaire(float prixUnitaire);
     
     /*
      * méthodes compteClient
@@ -59,6 +62,13 @@ public interface facadeLocal
     Adresse getAdresseCompteClient();
     String getEmailCompteClient();
     String getMdpCompteClient();
+    void creerCompteClient();
+    void modifierCompteClient();
+    void ajouterAdresse();
+    void modifierAdresse();
+    void supprimerAdresse();
+    void seConnecter();
+    void seDeconnecter();
     
     /*
      * méthodes banque
