@@ -11,6 +11,8 @@ package metier;
 public class LignePanier 
 {
     int quantite;
+    int idArticle;
+    float prixUnitaire;
     float sommeIntermediaire;
 
     public int getQuantite() 
@@ -31,6 +33,24 @@ public class LignePanier
     public void setSommeIntermediaire(float sommeIntermediaire) 
     {
         this.sommeIntermediaire = sommeIntermediaire;
+    }
+
+    public int getIdArticle() {
+        return idArticle;
+    }
+
+    public void setIdArticle(int idArticle) {
+        this.idArticle = idArticle;
+    }
+
+    public float getPrixUnitaire() 
+    {
+        return prixUnitaire;
+    }
+
+    public void setPrixUnitaire(float prixUnitaire) 
+    {
+        this.prixUnitaire = prixUnitaire;
     }
     
     

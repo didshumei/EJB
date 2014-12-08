@@ -15,4 +15,6 @@ public interface EJBLignePanierLocal
 {
     int getQuantite();
     float getSommeIntermediaire();
+    float getPrixUnitaire();
+    void setPrixUnitaire(float prixUnitaire);
 }

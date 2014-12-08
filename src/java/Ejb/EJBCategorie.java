@@ -50,4 +50,9 @@ public class EJBCategorie implements EJBCategorieLocal {
     public void creerGenre(String libelleGenre) {
         genre.creerGenre(libelleGenre); 
     }
+
+    @Override
+    public void creerCategorie() {
+        categorie.creerCategorie();
+    }
 }

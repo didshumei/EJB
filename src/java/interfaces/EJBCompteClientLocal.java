@@ -21,4 +21,11 @@ public interface EJBCompteClientLocal
     String getEmailCompteClient();
     String getMdpCompteClient();
     String getTelCompteClient();
+    void creerCompteClient();
+    void modifierCompteClient();
+    void ajouterAdresse();
+    void modifierAdresse();
+    void supprimerAdresse();
+    void seConnecter();
+    void seDeconnecter();
 }

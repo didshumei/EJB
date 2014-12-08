@@ -22,6 +22,7 @@ public interface EJBCategorieLocal {
 
     public void setReferenceCategorie(String referenceCategorie);
 
+    public void creerCategorie();
     
     void creerGenre(String libelleGenre);
     

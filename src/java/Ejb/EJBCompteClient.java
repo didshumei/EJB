@@ -59,4 +59,46 @@ public class EJBCompteClient implements EJBCompteClientLocal
     {
         return compteCli.getTelCompteClient();
     }
+
+    @Override
+    public void creerCompteClient() 
+    {
+        compteCli.creerCompteClient();
+    }
+
+    @Override
+    public void modifierCompteClient() 
+    {
+        compteCli.modifierCompteClient();
+    }
+
+    @Override
+    public void ajouterAdresse() 
+    {
+        compteCli.ajouterAdresse();
+    }
+
+    @Override
+    public void modifierAdresse() 
+    {
+        compteCli.modifierAdresse();
+    }
+
+    @Override
+    public void supprimerAdresse() 
+    {
+        compteCli.supprimerAdresse();
+    }
+
+    @Override
+    public void seConnecter() 
+    {
+        compteCli.seConnecter();
+    }
+
+    @Override
+    public void seDeconnecter() 
+    {
+        compteCli.seDeconnecter();
+    }
 }
