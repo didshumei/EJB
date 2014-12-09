@@ -8,29 +8,34 @@ package metier;
  *
  * @author Frontoni
  */
-public class GestionnaireCommande extends CompteSalarie
+public class    GestionnaireCommande extends CompteSalarie
 {
-    public GestionnaireCommande()
+    public      GestionnaireCommande()
     {
     }
     
-    public boolean  modifierStatutCommande() // Ajouter dans les EJB
+    public Retour   recupererCommandes()
     {
-        return true;
+        return new Retour(2);
     }
     
-    public boolean  mettreEnRemboursement(int idLigneCommande)
+    public Retour   recupererLignesCommande(int idCommande)
     {
-        return true;
+        return new Retour(2);
     }
     
-    public boolean  saisirAccuseReception()
+    public Retour   modifierStatutCommande(int idCommande, int nouveauStatut)
     {
-        return true;
+        return new Retour(2);
     }
     
-    public boolean  getCommandeLivraisonPartielle()
+    public Retour   mettreEnRemboursement(int idCommande, int idArticle)
     {
-        return true;
+        return new Retour(2);
+    }
+    
+    public Retour   saisirAccuseReception(int idCommande, String lienImage)
+    {
+        return new Retour(2);
     }
 }

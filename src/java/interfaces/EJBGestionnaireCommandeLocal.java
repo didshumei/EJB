@@ -5,17 +5,22 @@
 package interfaces;
 
 import javax.ejb.Local;
+import metier.Retour;
 
 /**
  *
  * @author Frontoni
  */
 @Local
-public interface EJBGestionnaireCommandeLocal
+public interface    EJBGestionnaireCommandeLocal
 {
-    boolean  mettreEnRemboursement(int idLigneCommande);
+    Retour  modifierStatutCommande(int idCommande, int nouveauStatut);
     
-    boolean  saisirAccuseReception();
+    Retour  mettreEnRemboursement(int idCommande, int idArticle);
     
-    boolean  getCommandeLivraisonPartielle();
+    Retour  saisirAccuseReception(int idCommande, String lienImage);
+    
+    Retour   recupererCommandes();
+    
+    Retour   recupererLignesCommande(int idCommande);
 }

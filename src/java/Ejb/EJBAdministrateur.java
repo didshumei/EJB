@@ -8,61 +8,67 @@ import java.util.Date;
 import javax.ejb.Stateless;
 import metier.Administrateur;
 import interfaces.EJBAdministrateurLocal;
-import metier.Salarie;
+import metier.Retour;
 
 /**
  *
  * @author Frontoni
  */
 @Stateless
-public class EJBAdministrateur implements EJBAdministrateurLocal
+public class        EJBAdministrateur implements EJBAdministrateurLocal
 {
     Administrateur  admin;
     
-    public EJBAdministrateur() 
+    public  EJBAdministrateur() 
     {
         admin = new Administrateur();
     }
 
     @Override
-    public boolean modificationFrequencePurge(int nbJours)
+    public Retour   modificationFrequencePurge(int nbJours)
     {
         return admin.modificationFrequencePurge(nbJours);
     }
 
     @Override
-    public boolean modificationDatePurge(Date date)
+    public Retour   modificationDatePurge(Date date)
     {
         return admin.modificationDatePurge(date);
     }
 
     @Override
-    public boolean dureeSauvegardeArchive(int nbMois)
+    public Retour   dureeSauvegardeArchive(int nbMois)
     {
         return admin.dureeSauvegardeArchive(nbMois);
     }
 
     @Override
-    public boolean creerCompte(String nom, String prenom, String login, String password)
+    public Retour   ajouterUnRole(String nom, String role)
     {
-        return admin.creerCompte(nom, prenom, login, password);
+        return admin.ajouterUnRole(nom, role);
     }
 
     @Override
-    public boolean ajouterUnRole(Salarie salarie, String unRole)
+    public Retour   supprimerUnRole(String nom, String role)
     {
-        return admin.ajouterUnRole(salarie, unRole);
+        return admin.supprimerUnRole(nom, role);
     }
 
     @Override
-    public boolean supprimerUnRole(Salarie salarie, String unRole)
+    public Retour   desactiverUnCompte(String nom)
     {
-        return admin.supprimerUnRole(salarie, unRole);
+        return admin.desactiverUnCompte(nom);
     }
 
     @Override
-    public boolean desactiverUnCompte(Salarie salarie)
+    public Retour   recupererSalaries()
     {
-        return admin.desactiverUnCompte(salarie);
+        return admin.recupererSalaries();
+    }
+
+    @Override
+    public Retour   creerCompteSalarie(String nom)
+    {
+        return admin.creerCompteSalarie(nom);
     }
 }

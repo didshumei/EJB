@@ -15,7 +15,6 @@ public class        Salarie
     
     public  Salarie()
     {
-        
     }
     
     public  Salarie(String nom, String prenom)

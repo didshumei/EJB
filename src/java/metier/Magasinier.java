@@ -4,38 +4,68 @@
  */
 package metier;
 
-import java.util.ArrayList;
-import java.util.List;
-
 /**
  *
  * @author Frontoni
  */
-public class Magasinier extends CompteSalarie
+public class    Magasinier extends CompteSalarie
 {
-    public  Magasinier()
+    public      Magasinier()
     {
     }
     
-    public boolean  recupererArticles() // Ajouter dans les EJB
+    public Retour   recupererArticles()
     {
-        return true;
+        return new Retour(2);
     }
     
-    public boolean  mettreAJourStocks(int idArticle, int quantitéAjoutee)
+    public Retour   recupererArticlesEnDessousSeuil()
     {
-        return true;
+        return new Retour(2);
     }
     
-    public List<Integer>    chercherArticlesDessousSeuil()
+    public Retour   recupererFournisseurs()
     {
-        List<Integer>       articleDessousSeuil = new ArrayList<Integer>();
-        
-        return articleDessousSeuil;
+        return new Retour(2);
     }
     
-    public boolean  fixerQuantiteArticle(int idArticle, int quantite)
+    public Retour   modifierQuantiteEnStock(int idArticle, int quantitéAjoutee)
     {
-        return true;
+        return new Retour(2);
+    }
+    
+    public Retour   ajouterFournisseur(String nom, String adresse, String codePostal, String ville, String telephone, String email)
+    {
+        return new Retour(2);
+    }
+    
+    public Retour   creerCommandeReappro()
+    {
+        return new Retour(2);
+    }
+    
+    public Retour   ajouterLigneCommandeReappro(int idCommandeReappro, int idArticle, int quantite)
+    {
+        return new Retour(2);
+    }
+    
+    public Retour   associerArticleFournisseur(int idArticle, int idFournisseur, String referenceArticleChezFournisseur, int seuilMinDeCommande)
+    {
+        return new Retour(2);
+    }
+    
+    public Retour   modifierFournisseur(int idFournisseur, String nom, String adresse, String codePostal, String ville, String telephone, String email)
+    {
+        return new Retour(2);
+    }
+    
+    public Retour   modifierSeuilReappro(int idCommandeReappro, int idArticle, int quantite)
+    {
+        return new Retour(2);
+    }
+    
+    public Retour   retirerFournisseur(int idFournisseur)
+    {
+        return new Retour(2);
     }
 }

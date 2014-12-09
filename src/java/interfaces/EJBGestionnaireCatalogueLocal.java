@@ -12,10 +12,19 @@ import metier.Retour;
  * @author Frontoni
  */
 @Local
-public interface EJBGestionnaireCatalogueLocal
+public interface    EJBGestionnaireCatalogueLocal
 {
-    Retour   ajouterArticle(int idGenre, int idCategorie, float prix, String titre, String lienPhoto, String auteur, String editeur, String description);
-    Retour   modifierArticle(int idGenre, int idCategorie, float prix, String titre, String lienPhoto, String auteur, String editeur, String description);
+    Retour   recupererArticles();
+    
+    Retour   recupererGenres();
+    
+    Retour   recupererCategories();
+    
+    Retour   ajouterArticle(int idGenre, int idCategorie, float prix, String titre, String auteur, String editeur, String description, String lienPhoto);
+    
+    Retour   modifierArticle(int idGenre, int idCategorie, float prix, String titre, String auteur, String editeur, String description, String lienPhoto);
+    
     Retour   creerCategorie(String libelle);
+    
     Retour   creerGenre(String libelle);
 }

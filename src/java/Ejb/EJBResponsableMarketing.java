@@ -8,13 +8,14 @@ import interfaces.EJBResponsableMarketingLocal;
 import java.util.Date;
 import javax.ejb.Stateless;
 import metier.ResponsableMarketing;
+import metier.Retour;
 
 /**
  *
  * @author Frontoni
  */
 @Stateless
-public class EJBResponsableMarketing implements EJBResponsableMarketingLocal
+public class                EJBResponsableMarketing implements EJBResponsableMarketingLocal
 {
     ResponsableMarketing    market;
     
@@ -22,27 +23,39 @@ public class EJBResponsableMarketing implements EJBResponsableMarketingLocal
     {
         market = new ResponsableMarketing();
     }
-    
+
     @Override
-    public boolean creerPromotion(Date dateDebut, Date dateFin, float prix)
+    public Retour   recupererArticles()
     {
-        return market.creerPromotion(dateDebut, dateFin, prix);
+        return market.recupererArticles();
     }
 
     @Override
-    public boolean associerPromoArticle(int idPromo, int idArticle)
+    public Retour   recupererPromos()
+    {
+        return market.recupererPromos();
+    }
+
+    @Override
+    public Retour   creerPromotion(Date dateDebut, Date dateFin, float remise)
+    {
+        return market.creerPromotion(dateDebut, dateFin, remise);
+    }
+
+    @Override
+    public Retour   associerPromoArticle(int idPromo, int idArticle)
     {
         return market.associerPromoArticle(idPromo, idArticle);
     }
 
     @Override
-    public boolean terminerPromotion(int idPromo)
+    public Retour   terminerPromotion(int idPromo)
     {
         return market.terminerPromotion(idPromo);
     }
 
     @Override
-    public boolean modifierPrixArticle(int idArticle, float prix)
+    public Retour   modifierPrixArticle(int idArticle, float prix)
     {
         return market.modifierPrixArticle(idArticle, prix);
     }

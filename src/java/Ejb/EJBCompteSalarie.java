@@ -8,66 +8,49 @@ import interfaces.EJBCompteSalarieLocal;
 import java.util.List;
 import javax.ejb.Stateless;
 import metier.CompteSalarie;
+import metier.Retour;
 
 /**
  *
  * @author Frontoni
  */
 @Stateless
-public class EJBCompteSalarie implements EJBCompteSalarieLocal
+public class        EJBCompteSalarie implements EJBCompteSalarieLocal
 {
-    CompteSalarie salarie;
+    CompteSalarie   salarie;
 
-    public EJBCompteSalarie()
+    public  EJBCompteSalarie()
     {
         salarie = new CompteSalarie();
-    }
-    
-    @Override
-    public int getId()
-    {
-        return (salarie.getId());
-    }
-    
-    @Override
-    public String getNom()
-    {
-        return (salarie.getNom());
-    }
-
-    @Override
-    public String getPrenom()
-    {
-        return (salarie.getPrenom());
     }
 
     @Override
     public List<String> getRoles()
     {
-        return (salarie.getRoles());
+        return salarie.getRoles();
     }
 
     @Override
-    public boolean seConnecter(String login, String password)
+    public String getLogin()
     {
-        return (salarie.seConnecter(login, password));
+        return salarie.getLogin();
     }
 
     @Override
-    public boolean seDeconnecter()
+    public String getPassword()
     {
-        return (salarie.seDeconnecter());
+        return salarie.getPassword();
     }
 
     @Override
-    public void setNom(String nom)
+    public Retour seConnecter(String loginEntre, String passwordEntre)
     {
-        salarie.setNom(nom);
+        return salarie.seConnecter(loginEntre, passwordEntre);
     }
 
     @Override
-    public void setPrenom(String prenom)
+    public Retour seDeconnecter()
     {
-        salarie.setPrenom(prenom);
+        return salarie.seDeconnecter();
     }
 }

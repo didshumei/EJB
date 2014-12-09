@@ -6,27 +6,28 @@ package interfaces;
 
 import java.util.Date;
 import javax.ejb.Local;
-import metier.Salarie;
+import metier.Retour;
 
 /**
  *
  * @author Frontoni
  */
 @Local
-public interface EJBAdministrateurLocal
+public interface    EJBAdministrateurLocal
 {
+    Retour  creerCompteSalarie(String nom);
     
-    boolean creerCompte(String nom, String prenom, String login, String password);
+    Retour  ajouterUnRole(String nom, String role);
     
-    boolean  ajouterUnRole(Salarie salarie, String unRole);
+    Retour  supprimerUnRole(String nom, String role);
     
-    boolean  supprimerUnRole(Salarie salarie, String unRole);
+    Retour  desactiverUnCompte(String nom);
     
-    boolean  desactiverUnCompte(Salarie salarie);
+    Retour  modificationFrequencePurge(int nbJours);
     
-    boolean  modificationFrequencePurge(int nbJours);
+    Retour  modificationDatePurge(Date date);
     
-    boolean  modificationDatePurge(Date date);
+    Retour  dureeSauvegardeArchive(int nbMois);
     
-    boolean  dureeSauvegardeArchive(int nbMois);
+    Retour  recupererSalaries();
 }

@@ -4,19 +4,35 @@
  */
 package interfaces;
 
-import java.util.List;
 import javax.ejb.Local;
+import metier.Retour;
 
 /**
  *
  * @author Frontoni
  */
 @Local
-public interface EJBMagasinierLocal
+public interface    EJBMagasinierLocal
 {
-    boolean  mettreAJourStocks(int idArticle, int quantitéAjoutee);
+    Retour  recupererArticles();
     
-    List<Integer>    chercherArticlesDessousSeuil();
+    Retour  recupererArticlesEnDessousSeuil();
     
-    boolean  fixerQuantiteArticle(int idArticle, int quantite);
+    Retour  recupererFournisseurs();
+    
+    Retour  modifierQuantiteEnStock(int idArticle, int quantitéAjoutee);
+    
+    Retour  ajouterFournisseur(String nom, String adresse, String codePostal, String ville, String telephone, String email);
+    
+    Retour  creerCommandeReappro();
+    
+    Retour  ajouterLigneCommandeReappro(int idCommandeReappro, int idArticle, int quantite);
+    
+    Retour  associerArticleFournisseur(int idArticle, int idFournisseur, String referenceArticleChezFournisseur, int seuilMinDeCommande);
+    
+    Retour  modifierFournisseur(int idFournisseur, String nom, String adresse, String codePostal, String ville, String telephone, String email);
+    
+    Retour  modifierSeuilReappro(int idCommandeReappro, int idArticle, int quantite);
+    
+    Retour  retirerFournisseur(int idFournisseur);
 }

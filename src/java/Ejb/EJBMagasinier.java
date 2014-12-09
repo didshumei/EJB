@@ -5,40 +5,88 @@
 package Ejb;
 
 import interfaces.EJBMagasinierLocal;
-import java.util.List;
 import javax.ejb.Stateless;
 import metier.Magasinier;
+import metier.Retour;
 
 /**
  *
  * @author Frontoni
  */
 @Stateless
-public class EJBMagasinier implements EJBMagasinierLocal
+public class    EJBMagasinier implements EJBMagasinierLocal
 {
     Magasinier  magasinier;
 
-    public EJBMagasinier()
+    public  EJBMagasinier()
     {
         magasinier = new Magasinier();
     }
-    
+
     @Override
-    public boolean mettreAJourStocks(int idArticle, int quantitéAjoutee)
+    public Retour   recupererArticles()
     {
-        return magasinier.mettreAJourStocks(idArticle, quantitéAjoutee);
+        return magasinier.recupererArticles();
     }
 
     @Override
-    public List<Integer> chercherArticlesDessousSeuil()
+    public Retour   recupererArticlesEnDessousSeuil()
     {
-        return magasinier.chercherArticlesDessousSeuil();
+        return magasinier.recupererArticlesEnDessousSeuil();
     }
 
     @Override
-    public boolean fixerQuantiteArticle(int idArticle, int quantite)
+    public Retour   recupererFournisseurs()
     {
-        return magasinier.fixerQuantiteArticle(idArticle, quantite);
+        return magasinier.recupererFournisseurs();
+    }
+
+    @Override
+    public Retour   modifierQuantiteEnStock(int idArticle, int quantitéAjoutee)
+    {
+        return magasinier.modifierQuantiteEnStock(idArticle, quantitéAjoutee);
+    }
+
+    @Override
+    public Retour   ajouterFournisseur(String nom, String adresse, String codePostal, String ville, String telephone, String email)
+    {
+        return magasinier.ajouterFournisseur(nom, adresse, codePostal, ville, telephone, email);
+    }
+
+    @Override
+    public Retour   creerCommandeReappro()
+    {
+        return magasinier.creerCommandeReappro();
+    }
+
+    @Override
+    public Retour   ajouterLigneCommandeReappro(int idCommandeReappro, int idArticle, int quantite)
+    {
+        return magasinier.ajouterLigneCommandeReappro(idCommandeReappro, idArticle, quantite);
+    }
+
+    @Override
+    public Retour   associerArticleFournisseur(int idArticle, int idFournisseur, String referenceArticleChezFournisseur, int seuilMinDeCommande)
+    {
+        return magasinier.associerArticleFournisseur(idArticle, idFournisseur, referenceArticleChezFournisseur, seuilMinDeCommande);
+    }
+
+    @Override
+    public Retour   modifierFournisseur(int idFournisseur, String nom, String adresse, String codePostal, String ville, String telephone, String email)
+    {
+        return magasinier.modifierFournisseur(idFournisseur, nom, adresse, codePostal, ville, telephone, email);
+    }
+
+    @Override
+    public Retour   modifierSeuilReappro(int idCommandeReappro, int idArticle, int quantite)
+    {
+        return magasinier.modifierSeuilReappro(idCommandeReappro, idArticle, quantite);
+    }
+
+    @Override
+    public Retour   retirerFournisseur(int idFournisseur)
+    {
+        return magasinier.retirerFournisseur(idFournisseur);
     }
 
 }

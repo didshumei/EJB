@@ -6,19 +6,24 @@ package interfaces;
 
 import java.util.Date;
 import javax.ejb.Local;
+import metier.Retour;
 
 /**
  *
  * @author Frontoni
  */
 @Local
-public interface EJBResponsableMarketingLocal
+public interface    EJBResponsableMarketingLocal
 {
-    boolean  creerPromotion(Date dateDebut, Date dateFin, float prix);
+    Retour  recupererArticles();
     
-    boolean  associerPromoArticle(int idPromo, int idArticle);
+    Retour  recupererPromos();
     
-    boolean  terminerPromotion(int idPromo);
+    Retour  creerPromotion(Date dateDebut, Date dateFin, float remise);
     
-    boolean  modifierPrixArticle(int idArticle, float prix);
+    Retour  associerPromoArticle(int idPromo, int idArticle);
+    
+    Retour  terminerPromotion(int idPromo);
+    
+    Retour  modifierPrixArticle(int idArticle, float prix);
 }

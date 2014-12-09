@@ -10,7 +10,7 @@ package metier;
  */
 
 // Classe permettant de renvoyer les valeurs de retour des procédures stockées
-public class    Retour<T>
+public class        Retour<T>
 {
     private T       resultat;
     private int     idRetour;
@@ -35,22 +35,22 @@ public class    Retour<T>
         messageException = infoException;
     }
     
-    public int getIdRetour()
+    public int  getIdRetour()
     {
         return idRetour;
     }
 
-    public String getMessageRetour()
+    public String   getMessageRetour()
     {
         return messageRetour;
     }
 
-    public T getResultat()
+    public T    getResultat()
     {
         return resultat;
     }
 
-    public String getMessageException()
+    public String   getMessageException()
     {
         return messageException;
     }

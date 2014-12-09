@@ -6,28 +6,23 @@ package interfaces;
 
 import java.util.List;
 import javax.ejb.Local;
+import metier.Retour;
 
 /**
  *
  * @author Frontoni
  */
 @Local
-public interface EJBCompteSalarieLocal
-{
-    String getNom();
+public interface    EJBCompteSalarieLocal
+{    
+    String          getLogin();
     
-    void setNom(String nom);
-    
-    int getId();
+    String          getPassword();
 
-    String getPrenom();
-    
-    void setPrenom(String prenom);
+    List<String>    getRoles();
 
-    public List<String> getRoles();
+    Retour          seConnecter(String loginEntre, String passwordEntre);
 
-    boolean seConnecter(String login, String password);
-
-    boolean seDeconnecter();
+    Retour          seDeconnecter();
     
 }

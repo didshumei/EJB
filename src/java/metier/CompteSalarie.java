@@ -10,30 +10,31 @@ import java.util.List;
  *
  * @author Frontoni
  */
-public class CompteSalarie extends Salarie
+public class        CompteSalarie
 {
-    int             id;
     String          login;
     String          password;
     List<String>    roles;
 
-    public CompteSalarie()
+    public  CompteSalarie()
     {
     }
     
-    public CompteSalarie(String nom, String prenom, String login, String password)
+    public  CompteSalarie(String login, String password, List<String> roles)
     {
-        super(nom, prenom);
         this.login = login;
         this.password = password;
+        this.roles = roles;
     }
 
-    // Il n'y a pas de set pour le nom, le prénom, l'id, le login, le password et pour le rôle
-    // Il n'y a de de get pour le login et le password
-
-    public int getId()
+    public String   getLogin()
     {
-        return id;
+        return login;
+    }
+
+    public String   getPassword()
+    {
+        return password;
     }
 
     public List<String> getRoles()
@@ -41,15 +42,13 @@ public class CompteSalarie extends Salarie
         return roles;
     }
     
-    public boolean  seConnecter(String loginEntre, String passwordEntre)
+    public Retour   seConnecter(String loginEntre, String passwordEntre)
     {
-        boolean     ok = false;
-        
-        return (ok);
+        return new Retour(2);
     }
     
-    public boolean seDeconnecter()
+    public Retour   seDeconnecter()
     {
-        return (true);
+        return new Retour(2);
     }
 }

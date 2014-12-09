@@ -10,48 +10,47 @@ import java.util.Date;
  *
  * @author Frontoni
  */
-public class Administrateur extends CompteSalarie
+public class    Administrateur extends CompteSalarie
 {
-    public Administrateur()
+    public      Administrateur()
     {
-        super();
     }
     
-    public boolean  recupererSalaries() // Ajouter dans les EJB
+    public Retour   recupererSalaries()
     {
-        return true;
+        return new Retour(2);
     }
     
-    public boolean  creerCompte(String nom, String prenom, String login, String password)
+    public Retour   creerCompteSalarie(String nom)
     {
-        return true;
+        return new Retour(2);
     }
     
-    public boolean  ajouterUnRole(Salarie salarie, String unRole)
+    public Retour   ajouterUnRole(String nom, String role)
     {
-        return true;
+        return new Retour (2);
     }
-     public boolean  supprimerUnRole(Salarie salarie, String unRole)
+     public Retour  supprimerUnRole(String nom, String role)
     {
-        return true;
+        return new Retour(2);
     }
-    public boolean  desactiverUnCompte(Salarie salarie)
+    public Retour   desactiverUnCompte(String nom)
     {
-        return true;
-    }
-    
-    public boolean  modificationFrequencePurge(int nbJours)
-    {
-        return true;
+        return new Retour(2);
     }
     
-    public boolean  modificationDatePurge(Date date)
+    public Retour   modificationFrequencePurge(int nbJours)
     {
-        return true;
+        return new Retour(2);
     }
     
-    public boolean  dureeSauvegardeArchive(int nbMois)
+    public Retour   modificationDatePurge(Date date)
     {
-        return true;
+        return new Retour(2);
+    }
+    
+    public Retour   dureeSauvegardeArchive(int nbMois)
+    {
+        return new Retour(2);
     }
 }

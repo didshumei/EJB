@@ -8,56 +8,44 @@ package metier;
  *
  * @author Frontoni
  */
-public class GestionnaireCatalogue extends CompteSalarie
+public class    GestionnaireCatalogue extends CompteSalarie
 {
-    public boolean  recupererArticles() // Ajouter dans les EJB
+    public      GestionnaireCatalogue()
     {
-        return true;
     }
     
-    public boolean  recupererGenres() // Ajouter dans les EJB
+    public Retour   recupererArticles()
     {
-        return true;
+        return new Retour(2);
     }
     
-    public boolean  recupererCategories() // Ajouter dans les EJB
+    public Retour   recupererGenres()
     {
-        return true;
+        return new Retour(2);
     }
     
-    public Retour   ajouterArticle(int idGenre, int idCategorie, float prix, String titre, String lienPhoto, String auteur, String editeur, String description)
+    public Retour   recupererCategories()
     {
-        int         idRetour = 0;
-        String      messageRetour = "";
-        
-        //procedure stockée à laquelle on idRetour et messageRetour
+        return new Retour(2);
+    }
+    
+    public Retour   ajouterArticle(int idGenre, int idCategorie, float prix, String titre, String auteur, String editeur, String description, String lienPhoto)
+    {
         return (new Retour(2));
     }
     
-    public Retour   modifierArticle(int idGenre, int idCategorie, float prix, String titre, String lienPhoto, String auteur, String editeur, String description)
+    public Retour   modifierArticle(int idGenre, int idCategorie, float prix, String titre, String auteur, String editeur, String description, String lienPhoto)
     {
-        int         idRetour = 0;
-        String      messageRetour = "";
-        
-        //procedure stockée à laquelle on idRetour et messageRetour
         return (new Retour(2));
     }
     
     public Retour   creerCategorie(String libelle)
     {
-        int         idRetour = 0;
-        String      messageRetour = "";
-        
-        //procedure stockée à laquelle on idRetour et messageRetour
         return (new Retour(2));
     }
     
     public Retour   creerGenre(String libelle)
     {
-        int         idRetour = 0;
-        String      messageRetour = "";
-        
-        //procedure stockée à laquelle on idRetour et messageRetour
         return (new Retour(2));
     }
 }

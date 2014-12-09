@@ -10,39 +10,39 @@ import java.util.Date;
  *
  * @author Frontoni
  */
-public class ResponsableMarketing extends CompteSalarie
+public class    ResponsableMarketing extends CompteSalarie
 {
-    public  ResponsableMarketing()
+    public      ResponsableMarketing()
     {
     }
     
-    public boolean  recupererArticles() // Ajouter dans les EJB
+    public Retour   recupererArticles()
     {
-        return true;
+        return new Retour(2);
     }
     
-    public boolean recupererPromos() // Ajouter dans les EJB
+    public Retour   recupererPromos()
     {
-        return true;
+        return new Retour(2);
     }
     
-    public boolean  creerPromotion(Date dateDebut, Date dateFin, float prix)
+    public Retour   creerPromotion(Date dateDebut, Date dateFin, float remise)
     {
-        return true;
+        return new Retour(2);
     }
     
-    public boolean  associerPromoArticle(int idPromo, int idArticle)
+    public Retour   associerPromoArticle(int idPromo, int idArticle)
     {
-        return true;
+        return new Retour(2);
     }
     
-    public boolean  terminerPromotion(int idPromo)
+    public Retour   terminerPromotion(int idPromo)
     {
-        return true;
+        return new Retour(2);
     }
     
-    public boolean  modifierPrixArticle(int idArticle, float prix)
+    public Retour   modifierPrixArticle(int idArticle, float prix)
     {
-        return true;
+        return new Retour(2);
     }
 }
