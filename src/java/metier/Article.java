@@ -263,7 +263,7 @@ public class Article
      */
     public EtatArticle getEtatArticle()
     {
-        return EtatArticle.Disponible;
+        return etat;
     }
     
     /**

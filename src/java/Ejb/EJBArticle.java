@@ -96,4 +96,11 @@ public class EJBArticle implements EJBArticleLocal
     {
         art.isEnDessousSeuilMini();
     }
+    
+    //recherche de la datasource
+    private javax.sql.DataSource getConnexion() throws javax.naming.NamingException
+    {
+        javax.naming.Context c = new javax.naming.InitialContext();
+        return (javax.sql.DataSource) c.lookup("jdbc/SEBO2014");
+    }
 }

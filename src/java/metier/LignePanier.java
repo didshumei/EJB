@@ -27,7 +27,7 @@ public class LignePanier
 
     public float getSommeIntermediaire() 
     {
-        return sommeIntermediaire;
+        return prixUnitaire * quantite;
     }
 
     public void setSommeIntermediaire(float sommeIntermediaire) 
@@ -35,11 +35,13 @@ public class LignePanier
         this.sommeIntermediaire = sommeIntermediaire;
     }
 
-    public int getIdArticle() {
+    public int getIdArticle() 
+    {
         return idArticle;
     }
 
-    public void setIdArticle(int idArticle) {
+    public void setIdArticle(int idArticle) 
+    {
         this.idArticle = idArticle;
     }
 
