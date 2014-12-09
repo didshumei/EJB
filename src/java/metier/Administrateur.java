@@ -17,7 +17,7 @@ public class Administrateur extends CompteSalarie
         super();
     }
     
-    public boolean  recuperUtilisateurs() // Ajouter dans les EJB
+    public boolean  recupererSalaries() // Ajouter dans les EJB
     {
         return true;
     }

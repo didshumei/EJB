@@ -31,7 +31,7 @@ public class GestionnaireCatalogue extends CompteSalarie
         String      messageRetour = "";
         
         //procedure stockée à laquelle on idRetour et messageRetour
-        return (new Retour(idRetour, messageRetour));
+        return (new Retour(2));
     }
     
     public Retour   modifierArticle(int idGenre, int idCategorie, float prix, String titre, String lienPhoto, String auteur, String editeur, String description)
@@ -40,7 +40,7 @@ public class GestionnaireCatalogue extends CompteSalarie
         String      messageRetour = "";
         
         //procedure stockée à laquelle on idRetour et messageRetour
-        return (new Retour(idRetour, messageRetour));
+        return (new Retour(2));
     }
     
     public Retour   creerCategorie(String libelle)
@@ -49,7 +49,7 @@ public class GestionnaireCatalogue extends CompteSalarie
         String      messageRetour = "";
         
         //procedure stockée à laquelle on idRetour et messageRetour
-        return (new Retour(idRetour, messageRetour));
+        return (new Retour(2));
     }
     
     public Retour   creerGenre(String libelle)
@@ -58,6 +58,6 @@ public class GestionnaireCatalogue extends CompteSalarie
         String      messageRetour = "";
         
         //procedure stockée à laquelle on idRetour et messageRetour
-        return (new Retour(idRetour, messageRetour));
+        return (new Retour(2));
     }
 }
