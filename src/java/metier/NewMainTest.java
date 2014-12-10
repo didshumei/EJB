@@ -34,11 +34,12 @@ public class NewMainTest {
           
             Connection con = Connexion.getConnection();
             Statement select = con.createStatement();
-            ResultSet result = select.executeQuery("SELECT * FROM Article");
+            ResultSet result = select.executeQuery("SELECT quantiteEnStock FROM Article WHERE idArticle = 1");
             while(result.next())
             {
-                String nom = result.getString("nom");
-                System.out.println(nom);
+                //String nom = result.getString("nom");
+                int stock = result.getInt("quantiteEnStock");
+                System.out.println(stock);
             }
             select.close();
             con.close();

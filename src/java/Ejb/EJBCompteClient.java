@@ -8,6 +8,7 @@ import interfaces.EJBCompteClientLocal;
 import javax.ejb.Stateless;
 import metier.Adresse;
 import metier.CompteClient;
+import metier.Retour;
 
 /**
  *
@@ -61,9 +62,10 @@ public class EJBCompteClient implements EJBCompteClientLocal
     }
 
     @Override
-    public void creerCompteClient() 
+    public Retour creerCompteClient(String nom, String prenom, String telephone, String email, String motDePasse, String numeroRue, String nomRue, String codePostal, String ville) 
     {
         compteCli.creerCompteClient();
+        return null;
     }
 
     @Override

@@ -1,5 +1,9 @@
 package metier;
 
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.Statement;
+
 /**
  * @author gruselle
  * Représente tous les attributs d'un article
@@ -305,8 +309,15 @@ public class Article
         
     }
     
-    public void isEnDessousSeuilMini()
+    public void isEnDessousSeuilMini() throws Exception
     {
+        /*boolean ok = false;
+        
+        Connection con = Connexion.getConnection();
+        Statement select = con.createStatement();
+        ResultSet result = select.executeQuery("SELECT * FROM Article");
+            
+        return ok;*/
         
     }
 }

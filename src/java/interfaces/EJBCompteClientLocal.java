@@ -6,6 +6,7 @@ package interfaces;
 
 import javax.ejb.Local;
 import metier.Adresse;
+import metier.Retour;
 
 /**
  *
@@ -21,7 +22,7 @@ public interface EJBCompteClientLocal
     String getEmailCompteClient();
     String getMdpCompteClient();
     String getTelCompteClient();
-    void creerCompteClient();
+    Retour creerCompteClient(String nom, String prenom, String telephone, String email, String motDePasse, String numeroRue, String nomRue, String codePostal, String ville);
     void modifierCompteClient();
     void ajouterAdresse();
     void modifierAdresse();

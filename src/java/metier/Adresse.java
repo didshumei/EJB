@@ -81,4 +81,9 @@ public class Adresse
     {
         this.ville = Ville;
     }
+    
+    public void creerAdresse()
+    {
+        
+    }
 }
