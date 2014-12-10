@@ -12,12 +12,23 @@ public class Adresse
 {
     private int idAdresse;
     private int idClient;
-    private int numRue;
+    private String numRue;
     private String nomRue;
     private String codePostal;
     private String ville;
 
+    public Adresse ()
+    {
+        
+    }
     
+    public Adresse (String numeroRue, String nomDeRue, String CP, String laVille)
+    {
+        setNumRue(numeroRue);
+        setNomRue(nomDeRue);
+        setCodePostal(CP);
+        setVille(laVille);
+    }
     /*
     * Cette methode permet d'obtenir l'id de l'adresse
     * @return idAdresse qui est l'id de l'adresse
@@ -42,12 +53,12 @@ public class Adresse
         this.idClient = idClient;
     }
 
-    public int getNumRue()
+    public String getNumRue()
     {
         return numRue;
     }
 
-    public void setNumRue(int numRue)
+    public void setNumRue(String numRue)
     {
         this.numRue = numRue;
     }

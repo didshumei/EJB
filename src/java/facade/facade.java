@@ -229,7 +229,7 @@ public class facade implements facadeLocal
     @Override
     public void creerCompteClient() 
     {
-        ejb_compteCli.creerCompteClient();
+        //ejb_compteCli.creerCompteClient();
     }
 
     @Override

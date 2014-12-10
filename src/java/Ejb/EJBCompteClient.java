@@ -62,10 +62,20 @@ public class EJBCompteClient implements EJBCompteClientLocal
     }
 
     @Override
-    public Retour<CompteClient> creerCompteClient(String nom, String prenom, String telephone, String email, String motDePasse, String numeroRue, String nomRue, String codePostal, String ville) 
+    public Retour<CompteClient> creerCompteClient(String nom, String prenom, String telephone, String email, String motDePasse,
+                                                  String numeroRue, String nomRue, String codePostal, String ville) 
     {
-        compteCli.creerCompteClient();
-        return null;
+        compteCli.setNomCompteClient(nom);
+        compteCli.setPrenomCompteClient(prenom);
+        compteCli.setTelCompteClient(telephone);
+        compteCli.setEmailCompteClient(email);
+        compteCli.setMdpCompteClient(motDePasse);
+
+        Adresse lAdresse = new Adresse(numeroRue, nomRue, codePostal, ville);
+                
+        compteCli.setAdresseCompteClient(lAdresse);
+        
+        return compteCli.insertIntoBDD();
     }
 
     @Override

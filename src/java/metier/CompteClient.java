@@ -1,5 +1,8 @@
 package metier;
 
+import java.sql.*;
+import java.util.logging.*;
+
 /**
  * Représente les différentes informations d'un compte client
  * @author gruselle
@@ -19,17 +22,14 @@ public class CompteClient
         
     }
     
-    public CompteClient(int idCompteClient, String nomCompteClient, String prenomCompteClient,
-                        Adresse adresseCompteClient, String emailCompteClient, 
-                        String mdpCompteClient, String telCompteClient) 
+    public CompteClient(String nomCompteClient, String prenomCompteClient, String telCompteClient, 
+                        String mdpCompteClient, String emailCompteClient) 
     {
-        this.idCompteClient = idCompteClient;
-        this.nomCompteClient = nomCompteClient;
-        this.prenomCompteClient = prenomCompteClient;
-        this.adresseCompteClient = adresseCompteClient;
-        this.emailCompteClient = emailCompteClient;
-        this.mdpCompteClient = mdpCompteClient;
-        this.telCompteClient = telCompteClient;
+        setNomCompteClient(nomCompteClient);
+        setPrenomCompteClient(prenomCompteClient);
+        setTelCompteClient(telCompteClient);
+        setMdpCompteClient(mdpCompteClient);
+        setEmailCompteClient(emailCompteClient);
     }
 
     /**
@@ -144,9 +144,52 @@ public class CompteClient
         this.telCompteClient = telCompteClient;
     }
     
-    public void creerCompteClient()
+    public Retour insertIntoBDD() 
+    {
+        try 
+        {
+            //connexion
+            Connection lCon = Connexion.getConnection();
+   
+            //appel de la procédure stockée
+            CallableStatement lStat = lCon.prepareCall("{call creerCompteClient(?, ?, ?, ?, ?, ?, ?, ?)}");
+            lStat.setString(1, nomCompteClient);
+            lStat.setString(2, prenomCompteClient);
+            lStat.setString(3, telCompteClient);
+            lStat.setString(4, mdpCompteClient);
+            lStat.setString(5, emailCompteClient);
+            lStat.registerOutParameter(6, java.sql.Types.INTEGER);
+            lStat.registerOutParameter(7, java.sql.Types.TINYINT);
+            lStat.registerOutParameter(8, java.sql.Types.VARCHAR);
+            lStat.executeUpdate();
+            
+            //récupération des retours
+            int lIdCree = lStat.getInt(6);
+            setIdCompteClient(lIdCree);
+            Logger.getLogger(CompteClient.class.getName()).log(Level.INFO, ">>>>>>>>>>>>>>>>>>>>>>>>>>" + lIdCree);
+            
+            int lCodeRetour = lStat.getInt(7);
+            Logger.getLogger(CompteClient.class.getName()).log(Level.INFO, ">>>>>>>>>>>>>>>>>>>>>>>>>>" + lCodeRetour);
+            
+            String lMsgRetour = lStat.getString(8);
+            Logger.getLogger(CompteClient.class.getName()).log(Level.INFO, ">>>>>>>>>>>>>>>>>>>>>>>>>>" + lMsgRetour);
+            
+            //fermeture de la connexion
+            lStat.close();
+            lCon.close();
+        } 
+        catch (Exception ex) 
+        {
+            Logger.getLogger(CompteClient.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        return null;
+    }
+    
+    public Retour creerCompteClient(String nom, String prenom, String telephone, String email, String motDePasse, String numeroRue, String nomRue, String codePostal, String ville)
     {
         
+        return null;
     }
     
     public void modifierCompteClient()
