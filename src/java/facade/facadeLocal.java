@@ -11,9 +11,11 @@ import metier.Adresse;
 import metier.Article;
 import metier.ArticleFournisseur;
 import metier.Categorie;
+import metier.CompteClient;
 import metier.Fournisseur;
 import metier.Genre;
 import metier.LignePanier;
+import metier.Retour;
 
 /**
  *
@@ -62,7 +64,7 @@ public interface facadeLocal
     Adresse getAdresseCompteClient();
     String getEmailCompteClient();
     String getMdpCompteClient();
-    void creerCompteClient();
+    Retour<CompteClient> creerCompteClient(String nom, String prenom, String telephone, String email, String motDePasse, String numeroRue, String nomRue, String codePostal, String ville);
     void modifierCompteClient();
     void ajouterAdresse();
     void modifierAdresse();

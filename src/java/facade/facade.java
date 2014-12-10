@@ -30,9 +30,11 @@ import metier.Adresse;
 import metier.Article;
 import metier.ArticleFournisseur;
 import metier.Categorie;
+import metier.CompteClient;
 import metier.Fournisseur;
 import metier.Genre;
 import metier.LignePanier;
+import metier.Retour;
 
 /**
  *
@@ -227,9 +229,9 @@ public class facade implements facadeLocal
     }    
     
     @Override
-    public void creerCompteClient() 
+    public Retour<CompteClient> creerCompteClient(String nom, String prenom, String telephone, String email, String motDePasse, String numeroRue, String nomRue, String codePostal, String ville) 
     {
-        //ejb_compteCli.creerCompteClient();
+        return ejb_compteCli.creerCompteClient(nom, prenom, telephone, email, motDePasse, numeroRue, nomRue, codePostal, ville);
     }
 
     @Override
