@@ -62,7 +62,7 @@ public class EJBCompteClient implements EJBCompteClientLocal
     }
 
     @Override
-    public Retour creerCompteClient(String nom, String prenom, String telephone, String email, String motDePasse, String numeroRue, String nomRue, String codePostal, String ville) 
+    public Retour<CompteClient> creerCompteClient(String nom, String prenom, String telephone, String email, String motDePasse, String numeroRue, String nomRue, String codePostal, String ville) 
     {
         compteCli.creerCompteClient();
         return null;
