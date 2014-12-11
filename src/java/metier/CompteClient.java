@@ -145,7 +145,7 @@ public class CompteClient
         this.telCompteClient = telCompteClient;
     }
     
-    public Retour insertIntoBDD() 
+    public Retour<CompteClient> insertIntoBDD() 
     {
         Retour leRetour = null;
         try 
@@ -186,7 +186,8 @@ public class CompteClient
             String lMsgRetour = lStat.getString(13);
             Logger.getLogger(CompteClient.class.getName()).log(Level.INFO, ">>>>>>>>>>>>>>>>>>>>>>>>>>" + lMsgRetour);
             
-            leRetour = new Retour(lCodeRetour, lMsgRetour, "wtf");
+            leRetour = new Retour<CompteClient>(lCodeRetour, lMsgRetour);
+            leRetour.setResultat(this);
             
             //fermeture de la connexion
             lStat.close();
@@ -195,6 +196,7 @@ public class CompteClient
         catch (Exception ex) 
         {
             Logger.getLogger(CompteClient.class.getName()).log(Level.SEVERE, null, ex);
+            leRetour = new Retour(-1, ex.toString());
         }
         
         return leRetour;

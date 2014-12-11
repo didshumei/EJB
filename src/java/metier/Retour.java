@@ -15,7 +15,6 @@ public class        Retour<T>
     private T       resultat;
     private int     idRetour;
     private String  messageRetour;
-    private String  messageException;
     
     // A utiliser si l'operation s'est bien deroulee
     public  Retour(T res)
@@ -23,16 +22,15 @@ public class        Retour<T>
         resultat = res;
         idRetour = 0;
         messageRetour = "OK";
-        messageException = "";
+       
     }
 
     // A utiliser si l'operation a rencontre une erreur ou un warning
-    public  Retour(int idRet, String messageErreur, String infoException)
+    public  Retour(int idRet, String messageErreur)
     {
         resultat = null;
         idRetour = idRet;
         messageRetour = messageErreur;
-        messageException = infoException;
     }
     
     public int  getIdRetour()
@@ -61,8 +59,5 @@ public class        Retour<T>
         return valide;
     }
 
-    public String   getMessageException()
-    {
-        return messageException;
-    }
+   
 }
