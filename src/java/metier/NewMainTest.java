@@ -4,7 +4,9 @@
  */
 package metier;
 
+import Ejb.EJBArticle;
 import Ejb.EJBCompteClient;
+import interfaces.EJBArticleLocal;
 import java.sql.Connection;
 import javax.sql.*;
 import java.sql.ResultSet;
@@ -25,9 +27,9 @@ public class NewMainTest {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        try
+     /*   try
         {
-            /*
+            
             //appel distant
             Hashtable vEnv = new Hashtable();
             vEnv.put("org.omg.CORBA.ORBInitialHost", "127.0.0.1");
@@ -49,7 +51,7 @@ public class NewMainTest {
             con.close();
             */ 
             
-        } catch (Exception e)
+        /*} catch (Exception e)
         {
             System.out.println("BUUUUG : " + e.getMessage());
             e.printStackTrace();
@@ -64,6 +66,10 @@ public class NewMainTest {
            
             throw new RuntimeException(ne);
         }
-         
+     */
+        String cb = "0123456789120";
+        EJBArticle test = new EJBArticle();        
+        Article aAfficher = test.getArticleByCodeBarre(cb);
+        System.out.println(aAfficher);
     }
 }

@@ -23,30 +23,51 @@ public class Article
     private String lienPhoto;
     private int seuilStockMin;
     private EtatArticle etat;
-    private int idGenre;
-    private int idCategorie;
     private int quantiteEnStock;
+    private String codeBarre;
 
+    
     public Article()
     {
         
     }
     
-    public Article(int idArticle, Genre genreArticle, float prixArticle, String titreArticle, 
-                  String auteurArticle, String editeurArticle, String descriptionArticle, 
-                  Categorie categorie, String lienPhoto, int seuilStockMin, EtatArticle etat) 
+    public Article(int lIdArticle, Genre leGenreArticle, float lePrixArticle, String leTitreArticle, 
+                  String lAuteurArticle, String lEditeurArticle, String laDescriptionArticle, 
+                  Categorie laCategorie, String leLienPhoto, int leSeuilStockMin, EtatArticle lEtat, int laQuantiteEnstock, String leCodeBarre) 
     {
-        this.idArticle = idArticle;
-        this.genreArticle = genreArticle;
-        this.prixArticle = prixArticle;
-        this.titreArticle = titreArticle;
-        this.auteurArticle = auteurArticle;
-        this.editeurArticle = editeurArticle;
-        this.descriptionArticle = descriptionArticle;
-        this.categorieArticle = categorie;
-        this.lienPhoto = lienPhoto;
-        this.seuilStockMin = seuilStockMin;
-        this.etat = etat;
+        setIdArticle(lIdArticle);
+        setGenreArticle(leGenreArticle);
+        setPrixArticle(lePrixArticle);
+        setTitreArticle(leTitreArticle);
+        setAuteurArticle(lAuteurArticle);
+        setEditeurArticle(lEditeurArticle);
+        setDescriptionArticle(laDescriptionArticle);
+        setCategorieArticle(laCategorie);
+        setLienPhoto(leLienPhoto);
+        setSeuilStockMin(leSeuilStockMin);
+        setEtatArticle(lEtat);
+        setQuantiteEnStock(laQuantiteEnstock);
+        setCodeBarre(leCodeBarre);
+    }
+    
+    public Article(int lIdArticle, Genre leGenreArticle, float lePrixArticle, String leTitreArticle, 
+                  String lAuteurArticle, String lEditeurArticle, String laDescriptionArticle, 
+                  Categorie laCategorie, String leLienPhoto, int leSeuilStockMin, int lEtat, int laQuantiteEnstock, String leCodeBarre) 
+    {
+        setIdArticle(lIdArticle);
+        setGenreArticle(leGenreArticle);
+        setPrixArticle(lePrixArticle);
+        setTitreArticle(leTitreArticle);
+        setAuteurArticle(lAuteurArticle);
+        setEditeurArticle(lEditeurArticle);
+        setDescriptionArticle(laDescriptionArticle);
+        setCategorieArticle(laCategorie);
+        setLienPhoto(leLienPhoto);
+        setSeuilStockMin(leSeuilStockMin);
+        setEtatArticle(lEtat);
+        setQuantiteEnStock(laQuantiteEnstock);
+        setCodeBarre(leCodeBarre);
     }
 
     public int getQuantiteEnStock() 
@@ -58,37 +79,6 @@ public class Article
     {
         this.quantiteEnStock = quantiteEnStock;
     }
-
-    public EtatArticle getEtat() 
-    {
-        return etat;
-    }
-
-    public void setEtat(EtatArticle etat) 
-    {
-        this.etat = etat;
-    }
-
-    public int getIdGenre() 
-    {
-        return idGenre;
-    }
-
-    public void setIdGenre(int idGenre) 
-    {
-        this.idGenre = idGenre;
-    }
-
-    public int getIdCategorie() 
-    {
-        return idCategorie;
-    }
-
-    public void setIdCategorie(int idCategorie) 
-    {
-        this.idCategorie = idCategorie;
-    }
-    
 
     /**
      * retourne l'identifiant de l'article.
@@ -275,33 +265,25 @@ public class Article
      * @param etat peut être "disponible", "à réapprovisionner",
      * "en cours", "rupture définitive"
      */
-    public void setEtatArticle(EtatArticle etat)
+    public void setEtatArticle(EtatArticle etatArt)
     {
-        if(etat.equals(EtatArticle.Disponible))
-        {
-            
-        }
-        else
-        {
-            if(etat.equals(EtatArticle.A_Reapprovisionner))
-            {
-                
-            }
-            else
-            {
-                if(etat.equals(EtatArticle.En_Cours_De_Reapprovisionnement))
-                {
-                    
-                }
-                else
-                {
-                    if(etat.equals(EtatArticle.Sorti_Du_Catalogue))
-                    {
-                        
-                    }
-                }
-            }
-        }
+        etat = etatArt;
+    }
+    
+    public void setEtatArticle(int etatInt)
+    {
+        EtatArticle EtatArt = getEtatDeInt(etatInt);
+        etat = EtatArt;
+    }
+    
+    public String getCodeBarre() 
+    {
+        return codeBarre;
+    }
+
+    public void setCodeBarre(String CodeBarre) 
+    {
+        this.codeBarre = CodeBarre;
     }
     
     public void ajouterPanier()
@@ -311,23 +293,88 @@ public class Article
     
     public void isEnDessousSeuilMini() throws Exception
     {
-        /*boolean ok = false;
         
-        Connection con = Connexion.getConnection();
-        Statement select = con.createStatement();
-        ResultSet result = select.executeQuery("SELECT * FROM Article");
+    }
+    
+    public Retour insertIntoBDD()
+    {
+        return null;
+    }
+    
+    public Retour updateIntoBDD()
+    {
+        return null;
+    }
+    
+    /**
+     * getArticleByCodeBarre permet de récupérer toutes les informations d'un article dans la BDD
+     * @param codeBarre contient le num du code barre correspondant à un article
+     * @return renvoie un article
+     */
+    public Article getArticleByCodeBarre(String codeBarre)
+    {
+        Article leRetour = null;
+        
+        try
+        {
+            //ouverture de la connexion
+            Connection co = Connexion.getConnection();
             
-        return ok;*/
+            //requete sql
+            Statement st = co.createStatement();
+            ResultSet resultat = st.executeQuery("SELECT Article.nom, Genre.nom as Genre, Categorie.nom as Categorie, idArticle, Article.idGenre,"
+                    + " Article.idCategorie, prix, auteur, editeur, [description], lienPhoto, "
+                    + "seuilDeReappro, etat, quantiteEnStock, EAN13 FROM Article, Genre, Categorie "
+                    + "WHERE Article.idCategorie = Categorie.idCategorie AND Article.idGenre = Genre.idGenre AND Article.EAN13="+codeBarre);
+            while (resultat.next())
+            {
+                leRetour = new Article(resultat.getInt("idArticle") ,new Genre(resultat.getInt("idGenre"), resultat.getString("Genre")), resultat.getFloat("prix"),
+                                           resultat.getString("nom"), resultat.getString("auteur"), resultat.getString("editeur"),
+                                           resultat.getString("description"),new Categorie(resultat.getInt("idCategorie"), resultat.getString("categorie")),
+                                           resultat.getString("lienPhoto"),resultat.getInt("seuilDeReappro"), resultat.getInt("etat"), resultat.getInt("quantiteEnStock"),
+                                           resultat.getString("EAN13"));              
+                        
+            }
+           
+        }
+        catch (Exception e)
+        {
+            System.out.println("article inexistant ou invalide : "+e.getMessage());
+        }
         
+        return leRetour;
+    }
+    /**
+     * EtatArticle permet d'avoir un état d'article
+     * @param etatBdd
+     * @return 
+     */
+    public EtatArticle getEtatDeInt(int etatBdd)
+    {
+        EtatArticle retour = null;
+        switch(etatBdd)
+        {
+            case 0 : retour = EtatArticle.Disponible;
+                break;
+            case 1 : retour = EtatArticle.A_Reapprovisionner;
+                break;
+            case 2 : retour = EtatArticle.En_Cours_De_Reapprovisionnement;
+                break;
+            case 3 : retour = EtatArticle.Sorti_Du_Catalogue;
+                break;
+        }
+        return retour;
     }
     
-    public Retour   insertIntoBDD()
+    public String toString()
     {
-        return null;
-    }
-    
-    public Retour   updateIntoBDD()
-    {
-        return null;
+        String artStr = "";
+        artStr = getIdArticle()+"/"+getGenreArticle().getNomGenre()+"/"+getPrixArticle()+"/"+getTitreArticle()+"/"+
+                 getAuteurArticle()+"/"+getEditeurArticle()+"/"+getDescriptionArticle()+"/"+getCategorieArticle().getReferenceCategorie()
+                +"/"+getLienPhoto()+"/"+getSeuilStockMin()+"/"+getEtatArticle()+"/"+getQuantiteEnStock()+"/"+getCodeBarre();
+        
+        
+        
+        return artStr;
     }
 }

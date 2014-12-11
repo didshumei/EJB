@@ -13,6 +13,16 @@ public class Genre {
     private int idGenre;
     private String nomGenre;
     private String referenceGenre;
+    
+    public Genre (int idGenre, String nomGenre)
+    {
+        setIdGenre(idGenre);
+        setNomGenre(nomGenre);
+    }
+
+    public Genre() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 
     public int getIdGenre() {
         return idGenre;

@@ -96,4 +96,10 @@ public class EJBArticle implements EJBArticleLocal
     {
         
     }
+
+    @Override
+    public Article getArticleByCodeBarre(String codeBarre) 
+    {
+        return art.getArticleByCodeBarre(codeBarre);
+    }
 }

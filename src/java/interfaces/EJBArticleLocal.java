@@ -31,5 +31,6 @@ public interface EJBArticleLocal
     Article.EtatArticle getEtatArticle();
     void ajouterPanier();
     void isEnDessousSeuilMini();
+    Article getArticleByCodeBarre(String codeBarre);
     
 }
