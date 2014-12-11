@@ -5,6 +5,9 @@
 package interfaces;
 
 import javax.ejb.Local;
+import metier.Article;
+import metier.Categorie;
+import metier.Genre;
 import metier.Retour;
 
 /**
@@ -20,11 +23,11 @@ public interface    EJBGestionnaireCatalogueLocal
     
     Retour   recupererCategories();
     
-    Retour   ajouterArticle(int idGenre, int idCategorie, float prix, String titre, String auteur, String editeur, String description, String lienPhoto);
+    Retour   ajouterArticle(Article art);
     
-    Retour   modifierArticle(int idGenre, int idCategorie, float prix, String titre, String auteur, String editeur, String description, String lienPhoto);
+    Retour   modifierArticle(Article art);
     
-    Retour   creerCategorie(String libelle);
+    Retour   creerCategorie(Categorie categ);
     
-    Retour   creerGenre(String libelle);
+    Retour   creerGenre(Genre genre);
 }

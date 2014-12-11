@@ -16,56 +16,56 @@ public class    Magasinier extends CompteSalarie
     
     public Retour   recupererArticles()
     {
-        return new Retour(2);
+        return null;
     }
     
     public Retour   recupererArticlesEnDessousSeuil()
     {
-        return new Retour(2);
+        return null;
     }
     
     public Retour   recupererFournisseurs()
     {
-        return new Retour(2);
+        return null;
     }
     
     public Retour   modifierQuantiteEnStock(int idArticle, int quantitéAjoutee)
     {
-        return new Retour(2);
+        return null;
     }
     
     public Retour   ajouterFournisseur(String nom, String adresse, String codePostal, String ville, String telephone, String email)
     {
-        return new Retour(2);
+        return null;
     }
     
     public Retour   creerCommandeReappro()
     {
-        return new Retour(2);
+        return null;
     }
     
     public Retour   ajouterLigneCommandeReappro(int idCommandeReappro, int idArticle, int quantite)
     {
-        return new Retour(2);
+        return null;
     }
     
     public Retour   associerArticleFournisseur(int idArticle, int idFournisseur, String referenceArticleChezFournisseur, int seuilMinDeCommande)
     {
-        return new Retour(2);
+        return null;
     }
     
     public Retour   modifierFournisseur(int idFournisseur, String nom, String adresse, String codePostal, String ville, String telephone, String email)
     {
-        return new Retour(2);
+        return null;
     }
     
     public Retour   modifierSeuilReappro(int idCommandeReappro, int idArticle, int quantite)
     {
-        return new Retour(2);
+        return null;
     }
     
     public Retour   retirerFournisseur(int idFournisseur)
     {
-        return new Retour(2);
+        return null;
     }
 }

@@ -16,26 +16,26 @@ public class    GestionnaireCommande extends CompteSalarie
     
     public Retour   recupererCommandes()
     {
-        return new Retour(2);
+        return null;
     }
     
     public Retour   recupererLignesCommande(int idCommande)
     {
-        return new Retour(2);
+        return null;
     }
     
     public Retour   modifierStatutCommande(int idCommande, int nouveauStatut)
     {
-        return new Retour(2);
+        return null;
     }
     
     public Retour   mettreEnRemboursement(int idCommande, int idArticle)
     {
-        return new Retour(2);
+        return null;
     }
     
     public Retour   saisirAccuseReception(int idCommande, String lienImage)
     {
-        return new Retour(2);
+        return null;
     }
 }

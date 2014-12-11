@@ -6,6 +6,9 @@ package Ejb;
 
 import interfaces.EJBGestionnaireCatalogueLocal;
 import javax.ejb.Stateless;
+import metier.Article;
+import metier.Categorie;
+import metier.Genre;
 import metier.GestionnaireCatalogue;
 import metier.Retour;
 
@@ -24,27 +27,27 @@ public class                EJBGestionnaireCatalogue implements EJBGestionnaireC
     }
     
     @Override
-    public Retour   ajouterArticle(int idGenre, int idCategorie, float prix, String titre, String auteur, String editeur, String description, String lienPhoto)
+    public Retour   ajouterArticle(Article art)
     {
-        return (gestion.ajouterArticle(idGenre, idCategorie, prix, titre, lienPhoto, auteur, editeur, description));
+        return (gestion.ajouterArticle(art));
     }
 
     @Override
-    public Retour   modifierArticle(int idGenre, int idCategorie, float prix, String titre, String lienPhoto, String auteur, String editeur, String description)
+    public Retour   modifierArticle(Article art)
     {
-        return (gestion.modifierArticle(idGenre, idCategorie, prix, titre, lienPhoto, auteur, editeur, description));
+        return (gestion.modifierArticle(art));
     }
 
     @Override
-    public Retour   creerCategorie(String libelle)
+    public Retour   creerCategorie(Categorie categ)
     {
-        return (gestion.creerCategorie(libelle));
+        return (gestion.creerCategorie(categ));
     }
 
     @Override
-    public Retour   creerGenre(String libelle)
+    public Retour   creerGenre(Genre genre)
     {
-        return (gestion.creerGenre(libelle));
+        return (gestion.creerGenre(genre));
     }
 
     @Override

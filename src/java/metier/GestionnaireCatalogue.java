@@ -16,36 +16,36 @@ public class    GestionnaireCatalogue extends CompteSalarie
     
     public Retour   recupererArticles()
     {
-        return new Retour(2);
+        return null;
     }
     
     public Retour   recupererGenres()
     {
-        return new Retour(2);
+        return null;
     }
     
     public Retour   recupererCategories()
     {
-        return new Retour(2);
+        return null;
     }
     
-    public Retour   ajouterArticle(int idGenre, int idCategorie, float prix, String titre, String auteur, String editeur, String description, String lienPhoto)
+    public Retour   ajouterArticle(Article art)
     {
-        return (new Retour(2));
+        return (art.insertIntoBDD());
     }
     
-    public Retour   modifierArticle(int idGenre, int idCategorie, float prix, String titre, String auteur, String editeur, String description, String lienPhoto)
+    public Retour   modifierArticle(Article art)
     {
-        return (new Retour(2));
+        return (art.updateIntoBDD());
     }
     
-    public Retour   creerCategorie(String libelle)
+    public Retour   creerCategorie(Categorie categ)
     {
-        return (new Retour(2));
+        return (null);
     }
     
-    public Retour   creerGenre(String libelle)
+    public Retour   creerGenre(Genre genre)
     {
-        return (new Retour(2));
+        return (null);
     }
 }

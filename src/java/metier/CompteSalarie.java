@@ -44,11 +44,11 @@ public class        CompteSalarie
     
     public Retour   seConnecter(String loginEntre, String passwordEntre)
     {
-        return new Retour(2);
+        return null;
     }
     
     public Retour   seDeconnecter()
     {
-        return new Retour(2);
+        return null;
     }
 }

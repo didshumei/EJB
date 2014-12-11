@@ -18,39 +18,39 @@ public class    Administrateur extends CompteSalarie
     
     public Retour   recupererSalaries()
     {
-        return new Retour(2);
+        return null;
     }
     
     public Retour   creerCompteSalarie(String nom)
     {
-        return new Retour(2);
+        return null;
     }
     
     public Retour   ajouterUnRole(String nom, String role)
     {
-        return new Retour (2);
+        return null;
     }
      public Retour  supprimerUnRole(String nom, String role)
     {
-        return new Retour(2);
+        return null;
     }
     public Retour   desactiverUnCompte(String nom)
     {
-        return new Retour(2);
+        return null;
     }
     
     public Retour   modificationFrequencePurge(int nbJours)
     {
-        return new Retour(2);
+        return null;
     }
     
     public Retour   modificationDatePurge(Date date)
     {
-        return new Retour(2);
+        return null;
     }
     
     public Retour   dureeSauvegardeArchive(int nbMois)
     {
-        return new Retour(2);
+        return null;
     }
 }

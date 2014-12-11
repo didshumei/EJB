@@ -18,31 +18,31 @@ public class    ResponsableMarketing extends CompteSalarie
     
     public Retour   recupererArticles()
     {
-        return new Retour(2);
+        return null;
     }
     
     public Retour   recupererPromos()
     {
-        return new Retour(2);
+        return null;
     }
     
     public Retour   creerPromotion(Date dateDebut, Date dateFin, float remise)
     {
-        return new Retour(2);
+        return null;
     }
     
     public Retour   associerPromoArticle(int idPromo, int idArticle)
     {
-        return new Retour(2);
+        return null;
     }
     
     public Retour   terminerPromotion(int idPromo)
     {
-        return new Retour(2);
+        return null;
     }
     
     public Retour   modifierPrixArticle(int idArticle, float prix)
     {
-        return new Retour(2);
+        return null;
     }
 }
