@@ -320,4 +320,14 @@ public class Article
         return ok;*/
         
     }
+    
+    public Retour   insertIntoBDD()
+    {
+        return null;
+    }
+    
+    public Retour   updateIntoBDD()
+    {
+        return null;
+    }
 }
