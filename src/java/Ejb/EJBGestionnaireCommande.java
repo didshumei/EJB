@@ -6,6 +6,8 @@ package Ejb;
 
 import interfaces.EJBGestionnaireCommandeLocal;
 import javax.ejb.Stateless;
+import metier.Article;
+import metier.Commande;
 import metier.GestionnaireCommande;
 import metier.Retour;
 
@@ -24,32 +26,32 @@ public class                EJBGestionnaireCommande implements EJBGestionnaireCo
     }
 
     @Override
-    public Retour   modifierStatutCommande(int idCommande, int nouveauStatut)
-    {
-        return commande.modifierStatutCommande(idCommande, nouveauStatut);
-    }
-
-    @Override
-    public Retour   mettreEnRemboursement(int idCommande, int idArticle)
-    {
-        return commande.mettreEnRemboursement(idCommande, idArticle);
-    }
-
-    @Override
-    public Retour   saisirAccuseReception(int idCommande, String lienImage)
-    {
-        return commande.saisirAccuseReception(idCommande, lienImage);
-    }
-
-    @Override
     public Retour recupererCommandes()
     {
         return commande.recupererCommandes();
     }
 
     @Override
-    public Retour recupererLignesCommande(int idCommande)
+    public Retour recupererLignesCommande(Commande com)
     {
-        return commande.recupererLignesCommande(idCommande);
+        return commande.recupererLignesCommande(com);
+    }
+
+    @Override
+    public Retour modifierStatutCommande(Commande com, int nouveauStatut)
+    {
+        return commande.modifierStatutCommande(com, nouveauStatut);
+    }
+
+    @Override
+    public Retour mettreEnRemboursement(Commande com, Article art)
+    {
+        return commande.mettreEnRemboursement(com, art);
+    }
+
+    @Override
+    public Retour saisirAccuseReception(Commande com, String lienImage)
+    {
+        return commande.saisirAccuseReception(com, lienImage);
     }
 }

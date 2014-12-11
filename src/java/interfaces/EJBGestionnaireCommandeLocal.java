@@ -5,6 +5,8 @@
 package interfaces;
 
 import javax.ejb.Local;
+import metier.Article;
+import metier.Commande;
 import metier.Retour;
 
 /**
@@ -14,13 +16,13 @@ import metier.Retour;
 @Local
 public interface    EJBGestionnaireCommandeLocal
 {
-    Retour  modifierStatutCommande(int idCommande, int nouveauStatut);
+    Retour  modifierStatutCommande(Commande com, int nouveauStatut);
     
-    Retour  mettreEnRemboursement(int idCommande, int idArticle);
+    Retour  mettreEnRemboursement(Commande com, Article art);
     
-    Retour  saisirAccuseReception(int idCommande, String lienImage);
+    Retour  saisirAccuseReception(Commande com, String lienImage);
     
-    Retour   recupererCommandes();
+    Retour  recupererCommandes();
     
-    Retour   recupererLignesCommande(int idCommande);
+    Retour  recupererLignesCommande(Commande com);
 }
