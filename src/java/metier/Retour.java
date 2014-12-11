@@ -17,11 +17,11 @@ public class        Retour<T>
     private String  messageRetour;
     
     // A utiliser si l'operation s'est bien deroulee
-    public  Retour(T res)
+    public  Retour(T res, int idRet, String messageErreur)
     {
         resultat = res;
-        idRetour = 0;
-        messageRetour = "OK";
+        idRetour = idRet;
+        messageRetour = messageErreur;
        
     }
 

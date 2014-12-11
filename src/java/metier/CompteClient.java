@@ -186,8 +186,7 @@ public class CompteClient
             String lMsgRetour = lStat.getString(13);
             Logger.getLogger(CompteClient.class.getName()).log(Level.INFO, ">>>>>>>>>>>>>>>>>>>>>>>>>>" + lMsgRetour);
             
-            leRetour = new Retour<CompteClient>(lCodeRetour, lMsgRetour);
-            leRetour.setResultat(this);
+            leRetour = new Retour<CompteClient>(this, lCodeRetour, lMsgRetour);
             
             //fermeture de la connexion
             lStat.close();

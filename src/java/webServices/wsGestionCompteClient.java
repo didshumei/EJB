@@ -34,19 +34,8 @@ public class wsGestionCompteClient
     }
     
     @WebMethod(operationName = "creerCompteClient")
-    public String creerCompteClient(String nom, String prenom, String telephone, String email, String motDePasse, String numeroRue, String nomRue, String codePostal, String ville)
+    public Retour<CompteClient> creerCompteClient(String nom, String prenom, String telephone, String email, String motDePasse, String numeroRue, String nomRue, String codePostal, String ville)
     {
-        Retour<CompteClient> retour;
-        String result;
-        retour = EJBCptClient.creerCompteClient(nom, prenom, telephone, email, motDePasse, numeroRue, nomRue, codePostal, ville);
-        if (retour != null)
-        {
-            result = (retour.getResultat().getIdCompteClient() + ";" + retour.getMessageRetour());
-        }
-        else
-        {
-            result = "La création du compte a échoué";
-        }
-        return result;
+        return EJBCptClient.creerCompteClient(nom, prenom, telephone, email, motDePasse, numeroRue, nomRue, codePostal, ville);
     }
 }
