@@ -37,6 +37,11 @@ public class Adresse
         return idAdresse;
     }
     
+    public void setIdAdresse(int id)
+    {
+        this.idAdresse = id;
+    }
+    
     /*
     * Cette methode permet d'obtenir l'id du client ayant cette adresse
     * @return idClient qui est l'id du client domicilie a cette adresse

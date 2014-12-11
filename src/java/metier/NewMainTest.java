@@ -58,7 +58,7 @@ public class NewMainTest {
         try {
             Context c = new InitialContext();
             EJBCompteClient eJBCompteClient = new EJBCompteClient();
-            Retour<CompteClient> creerCompteClient = eJBCompteClient.creerCompteClient("nom", "prenom", "telephone", "mdp", "email", "4", "allah rue", "codepo", "ici");
+            Retour<CompteClient> creerCompteClient = eJBCompteClient.creerCompteClient("nom", "prenom", "telephone", "email", "mdp", "4", "allah rue", "codepo", "ici");
         } catch (NamingException ne) {
            
             throw new RuntimeException(ne);
