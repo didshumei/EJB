@@ -49,6 +49,17 @@ public class        Retour<T>
     {
         return resultat;
     }
+    
+    public boolean setResultat(T res)
+    {
+        boolean valide = false;
+        if (res != null)
+        {
+            resultat = res;
+            valide = true;
+        }
+        return valide;
+    }
 
     public String   getMessageException()
     {
