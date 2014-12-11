@@ -19,22 +19,22 @@ public class    GestionnaireCommande extends CompteSalarie
         return null;
     }
     
-    public Retour   recupererLignesCommande(int idCommande)
+    public Retour   recupererLignesCommande(Commande com)
     {
         return null;
     }
     
-    public Retour   modifierStatutCommande(int idCommande, int nouveauStatut)
+    public Retour   modifierStatutCommande(Commande com, int nouveauStatut)
     {
         return null;
     }
     
-    public Retour   mettreEnRemboursement(int idCommande, int idArticle)
+    public Retour   mettreEnRemboursement(Commande com, Article art)
     {
         return null;
     }
     
-    public Retour   saisirAccuseReception(int idCommande, String lienImage)
+    public Retour   saisirAccuseReception(Commande com, String lienImage)
     {
         return null;
     }
