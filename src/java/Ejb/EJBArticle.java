@@ -92,9 +92,9 @@ public class EJBArticle implements EJBArticleLocal
     }
 
     @Override
-    public void isEnDessousSeuilMini() 
+    public boolean isEnDessousSeuilMini() throws Exception
     {
-        
+        return art.isEnDessousSeuilMini();
     }
 
     @Override

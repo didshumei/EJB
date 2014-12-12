@@ -291,9 +291,9 @@ public class Article
         
     }
     
-    public void isEnDessousSeuilMini() throws Exception
+    public boolean isEnDessousSeuilMini() throws Exception
     {
-        
+       return quantiteEnStock < seuilStockMin; 
     }
     
     public Retour insertIntoBDD()

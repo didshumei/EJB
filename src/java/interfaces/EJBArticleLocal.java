@@ -30,7 +30,7 @@ public interface EJBArticleLocal
     int getSeuilStockMin();
     Article.EtatArticle getEtatArticle();
     void ajouterPanier();
-    void isEnDessousSeuilMini();
+    boolean isEnDessousSeuilMini() throws Exception;
     Article getArticleByCodeBarre(String codeBarre);
     
 }
