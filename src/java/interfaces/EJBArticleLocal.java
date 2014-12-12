@@ -8,6 +8,7 @@ import javax.ejb.Local;
 import metier.Article;
 import metier.Categorie;
 import metier.Genre;
+import metier.Retour;
 
 /**
  * 
@@ -32,5 +33,6 @@ public interface EJBArticleLocal
     void ajouterPanier();
     boolean isEnDessousSeuilMini() throws Exception;
     Article getArticleByCodeBarre(String codeBarre);
+    Retour<Integer> ajouterQuantiteArticleAuStock(int idArticle, int quantiteAAJouter);
     
 }

@@ -1,8 +1,11 @@
 package metier;
 
+import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  * @author gruselle
@@ -376,5 +379,82 @@ public class Article
         
         
         return artStr;
+    }
+    
+    public Retour<Integer> ajouterQuantiteArticleAuStock(int quantiteAAjouter)
+    {
+        Retour leRetour = null;
+        
+        try
+        {
+            //connexion a la bdd
+            Connection lCon = Connexion.getConnection();
+   
+            //appel de la procédure stockée
+            CallableStatement lStat = lCon.prepareCall("{call modifierQuantiteEnStock(?, ?, ?, ?)}");
+            lStat.setInt(1, idArticle);
+            lStat.setInt(2, quantiteEnStock);
+            lStat.registerOutParameter(3, java.sql.Types.INTEGER);
+            lStat.registerOutParameter(4, java.sql.Types.VARCHAR);
+            
+            //rcupération des retour
+            int lCodeRetour = lStat.getInt(3);
+            Logger.getLogger(CompteClient.class.getName()).log(Level.INFO, ">>>>>>>>>>>>>>>>>>>>>>>>>>" + lCodeRetour);
+            
+            String lMsgRetour = lStat.getString(4);
+            Logger.getLogger(CompteClient.class.getName()).log(Level.INFO, ">>>>>>>>>>>>>>>>>>>>>>>>>>" + lMsgRetour);
+            
+            
+            leRetour = new Retour<Integer>(new Integer(idArticle),lCodeRetour, lMsgRetour);
+            
+            //fermeture de la connexion
+            lStat.close();
+            lCon.close();
+        }
+        catch(Exception e)
+        {
+            Logger.getLogger(CompteClient.class.getName()).log(Level.SEVERE, null, e);
+            leRetour = new Retour(-1, e.toString());
+        }
+        
+        return leRetour;
+    }
+    
+    public void fillArticleById(int idArticle)
+    {
+        try
+        {
+            //ouverture de la connexion
+            Connection co = Connexion.getConnection();
+            
+            //requete sql
+            Statement st = co.createStatement();
+            ResultSet resultat = st.executeQuery("SELECT Article.nom, Genre.nom as Genre, Categorie.nom as Categorie, idArticle, Article.idGenre,"
+                    + " Article.idCategorie, prix, auteur, editeur, [description], lienPhoto, "
+                    + "seuilDeReappro, etat, quantiteEnStock, EAN13 FROM Article, Genre, Categorie "
+                    + "WHERE Article.idCategorie = Categorie.idCategorie AND Article.idGenre = Genre.idGenre AND Article.idArticle="+idArticle);
+            while (resultat.next())
+            {
+                setIdArticle(resultat.getInt("idArticle"));
+                setAuteurArticle(resultat.getString("auteur"));
+                setCategorieArticle(new Categorie(resultat.getInt("idCategorie"), resultat.getString("categorie")));
+                setCodeBarre(resultat.getString("EAN13"));
+                setDescriptionArticle(resultat.getString("description"));
+                setEditeurArticle(resultat.getString("editeur"));
+                setEtatArticle(resultat.getInt("etat"));
+                setGenreArticle(new Genre(resultat.getInt("idGenre"), resultat.getString("Genre")));
+                setLienPhoto(resultat.getString("lienPhoto"));
+                setPrixArticle(resultat.getFloat("prix"));
+                setQuantiteEnStock(resultat.getInt("quantiteEnStock"));
+                setSeuilStockMin(resultat.getInt("seuilDeReappro"));
+                setTitreArticle(resultat.getString("nom"));
+                   
+            }
+           
+        }
+        catch (Exception e)
+        {
+            System.out.println("article inexistant ou invalide : "+e.getMessage());
+        }
     }
 }
