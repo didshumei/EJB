@@ -9,6 +9,7 @@ import javax.ejb.Stateless;
 import metier.Article;
 import metier.Categorie;
 import metier.Genre;
+import metier.Retour;
 
 /**
  * Contient tous les appels de méthodes de la classe Article
@@ -101,5 +102,11 @@ public class EJBArticle implements EJBArticleLocal
     public Article getArticleByCodeBarre(String codeBarre) 
     {
         return art.getArticleByCodeBarre(codeBarre);
+    }
+
+    @Override
+    public Retour<Integer> ajouterQuantiteArticleAuStock(int idArticle, int quantiteAAjouter) 
+    {        
+        return art.ajouterQuantiteArticleAuStock(quantiteAAjouter);
     }
 }
