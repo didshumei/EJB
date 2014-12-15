@@ -75,7 +75,7 @@ public class NewMainTest {
         
         int quantite = 15;
         EJBArticle test = new EJBArticle();
-        Retour<Integer> plouf = test.ajouterQuantiteArticleAuStock(1, quantite);
+        Retour<Integer> plouf = test.ajouterQuantiteArticleAuStock(3, quantite);
         System.out.println(plouf);
     }
 }

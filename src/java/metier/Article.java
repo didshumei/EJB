@@ -381,7 +381,7 @@ public class Article
         return artStr;
     }
     
-    public Retour<Integer> ajouterQuantiteArticleAuStock(int quantiteAAjouter)
+    public Retour<Integer> modifierQuantiteArticleAuStock(int quantiteAAjouter)
     {
         Retour leRetour = null;
         

@@ -108,6 +108,6 @@ public class EJBArticle implements EJBArticleLocal
     public Retour<Integer> ajouterQuantiteArticleAuStock(int idArticle, int quantiteAAjouter) 
     {
         art.fillArticleById(idArticle);
-        return art.ajouterQuantiteArticleAuStock(quantiteAAjouter);
+        return art.modifierQuantiteArticleAuStock(quantiteAAjouter);
     }
 }
