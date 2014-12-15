@@ -393,10 +393,9 @@ public class Article
             //appel de la procédure stockée
             CallableStatement lStat = lCon.prepareCall("{call modifierQuantiteEnStock(?, ?, ?, ?)}");
             lStat.setInt(1, idArticle);
-            lStat.setInt(2, quantiteAAjouter);
+            lStat.setInt(2, quantiteEnStock);
             lStat.registerOutParameter(3, java.sql.Types.INTEGER);
             lStat.registerOutParameter(4, java.sql.Types.VARCHAR);
-            lStat.executeUpdate();
             
             //rcupération des retour
             int lCodeRetour = lStat.getInt(3);
@@ -421,10 +420,6 @@ public class Article
         return leRetour;
     }
     
-    /**
-     * permet de remplir un article à partir de son id
-     * @param idArticle 
-     */
     public void fillArticleById(int idArticle)
     {
         try
@@ -452,8 +447,10 @@ public class Article
                 setPrixArticle(resultat.getFloat("prix"));
                 setQuantiteEnStock(resultat.getInt("quantiteEnStock"));
                 setSeuilStockMin(resultat.getInt("seuilDeReappro"));
-                setTitreArticle(resultat.getString("nom"));                   
-            }           
+                setTitreArticle(resultat.getString("nom"));
+                   
+            }
+           
         }
         catch (Exception e)
         {

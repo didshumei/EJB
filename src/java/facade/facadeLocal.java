@@ -39,7 +39,7 @@ public interface facadeLocal
     int getSeuilStockMin();
     Article.EtatArticle getEtatArticle();
     void ajouterPanier();
-    void isEnDessousSeuilMini();
+    boolean isEnDessousSeuilMini() throws Exception;
     
     /*
      * méthodes panier

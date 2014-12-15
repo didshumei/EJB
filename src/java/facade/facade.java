@@ -140,9 +140,9 @@ public class facade implements facadeLocal
     }
     
      @Override
-    public void isEnDessousSeuilMini() 
+    public boolean isEnDessousSeuilMini() throws Exception
      {
-        ejb_art.isEnDessousSeuilMini();
+        return ejb_art.isEnDessousSeuilMini();
     }
 
 
