@@ -201,16 +201,13 @@ public class SEBOArticles
             
             racine.appendChild(rapport);
             
-            Element qte = doc.createElement("quantite");
+            Element article = doc.createElement("article");
             
-            Element qteCorrigee = doc.createElement("nouvelleQuantite");
-            if(retourEjb.getIdRetour() == 0)
-            {
-            qteCorrigee.appendChild(doc.createTextNode(Integer.toString(retourEjb.getResultat())));
-            }
-            qte.appendChild(qteCorrigee);
+            Element quantite = doc.createElement("quantite");
+            quantite.appendChild(doc.createTextNode(Integer.toString(retourEjb.getResultat())));
+            article.appendChild(quantite);
             
-            racine.appendChild(qte);
+            racine.appendChild(article);
             
             TransformerFactory transformerFactory = TransformerFactory.newInstance();
             Transformer transformer = transformerFactory.newTransformer();

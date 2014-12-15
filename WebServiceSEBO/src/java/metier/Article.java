@@ -405,8 +405,8 @@ public class Article
             String lMsgRetour = lStat.getString(4);
             Logger.getLogger(CompteClient.class.getName()).log(Level.INFO, ">>>>>>>>>>>>>>>>>>>>>>>>>>" + lMsgRetour);
             
-            
-            leRetour = new Retour<Integer>(new Integer(this.getQuantiteEnStock() + quantiteAAjouter),lCodeRetour, lMsgRetour);
+            this.fillArticleById(this.getIdArticle());
+            leRetour = new Retour<Integer>(new Integer(this.getQuantiteEnStock()),lCodeRetour, lMsgRetour);
             
             //fermeture de la connexion
             lStat.close();
