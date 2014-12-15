@@ -406,7 +406,7 @@ public class Article
             Logger.getLogger(CompteClient.class.getName()).log(Level.INFO, ">>>>>>>>>>>>>>>>>>>>>>>>>>" + lMsgRetour);
             
             
-            leRetour = new Retour<Integer>(new Integer(idArticle),lCodeRetour, lMsgRetour);
+            leRetour = new Retour<Integer>(new Integer(this.getQuantiteEnStock() + quantiteAAjouter),lCodeRetour, lMsgRetour);
             
             //fermeture de la connexion
             lStat.close();

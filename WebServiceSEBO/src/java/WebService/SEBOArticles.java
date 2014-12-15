@@ -177,25 +177,6 @@ public class SEBOArticles
         
         Retour<Integer> retourEjb = ejbArticle.ajouterQuantiteArticleAuStock(idArticle, quantiteAjoutee);
         
-        if(retourEjb != null)
-        {
-            System.out.println("########## code retour : " + retourEjb.getIdRetour());
-            System.out.println("########## message retour : " + retourEjb.getMessageRetour());
-            System.out.println("");
-            if(retourEjb.getResultat() == null)
-            {
-                System.out.println("########## résultat null");
-            }
-            else
-            {
-                System.out.println("########## résultat PAS null = " + retourEjb.getResultat());
-            }
-        }
-        else
-        {
-            System.out.println("########## retourEJB null");
-        }
-        
         return creerXmlAjouterQuantiteStock(retourEjb);
     }
 
@@ -222,8 +203,11 @@ public class SEBOArticles
             
             Element qte = doc.createElement("quantite");
             
-            Element qteCorrigee = doc.createElement("quantiteCorrigee");
+            Element qteCorrigee = doc.createElement("nouvelleQuantite");
+            if(retourEjb.getIdRetour() == 0)
+            {
             qteCorrigee.appendChild(doc.createTextNode(Integer.toString(retourEjb.getResultat())));
+            }
             qte.appendChild(qteCorrigee);
             
             racine.appendChild(qte);
