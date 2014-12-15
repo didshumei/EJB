@@ -4,6 +4,7 @@
  */
 package interfaces;
 
+import java.util.List;
 import javax.ejb.Local;
 import metier.Article;
 
@@ -22,4 +23,10 @@ public interface EJBCommandeReapproLocal
      * l'article
      */
     public void ajouterArticle(Article article, int qt, int refCommande);
+    
+    /**
+     * Retourne la liste des articles donc la quantite est en dessous du seuil minimal
+     * @return Articles une liste des aricles a commander 
+     */
+    public List<Article> getListEnDessousSeuil();
 }

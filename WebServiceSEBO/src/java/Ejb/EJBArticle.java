@@ -106,7 +106,8 @@ public class EJBArticle implements EJBArticleLocal
 
     @Override
     public Retour<Integer> ajouterQuantiteArticleAuStock(int idArticle, int quantiteAAjouter) 
-    {        
-        return art.ajouterQuantiteArticleAuStock(quantiteAAjouter);
+    {
+        art.fillArticleById(idArticle);
+        return art.modifierQuantiteArticleAuStock(quantiteAAjouter);
     }
 }
