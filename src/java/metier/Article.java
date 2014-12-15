@@ -4,6 +4,7 @@ import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import java.util.Vector;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -406,7 +407,7 @@ public class Article
             Logger.getLogger(CompteClient.class.getName()).log(Level.INFO, ">>>>>>>>>>>>>>>>>>>>>>>>>>" + lMsgRetour);
             
             
-            leRetour = new Retour<Integer>(new Integer(idArticle),lCodeRetour, lMsgRetour);
+            leRetour = new Retour<Integer>(new Integer(this.getQuantiteEnStock() + quantiteAAjouter),lCodeRetour, lMsgRetour);
             
             //fermeture de la connexion
             lStat.close();
@@ -459,5 +460,39 @@ public class Article
         {
             System.out.println("article inexistant ou invalide : "+e.getMessage());
         }
+    }
+    
+    public Retour<Vector<String>> getListeEnDessousSeuil()
+    {
+        Retour leRetour = null;
+        
+        try
+        {
+            //ouverture de la connexion
+        Connection co = Connexion.getConnection();
+            
+        //requete sql
+        Statement st = co.createStatement();
+        ResultSet resultat = st.executeQuery("SELECT Article.nom, Genre.nom as Genre, Categorie.nom as Categorie, idArticle, Article.idGenre,"
+                + " Article.idCategorie, prix, auteur, editeur, [description], lienPhoto, "
+                + "seuilDeReappro, etat, quantiteEnStock, EAN13 FROM Article, Genre, Categorie "
+                + "WHERE Article.idCategorie = Categorie.idCategorie AND Article.idGenre = Genre.idGenre AND Article.idArticle="+idArticle);
+        
+            while(resultat.next())
+            {
+                leRetour.
+                /*leRetour = new Retour<Vector<String>>(resultat.getInt("idArticle") ,new Genre(resultat.getInt("idGenre"), resultat.getString("Genre")), resultat.getFloat("prix"),
+                                           resultat.getString("nom"), resultat.getString("auteur"), resultat.getString("editeur"),
+                                           resultat.getString("description"),new Categorie(resultat.getInt("idCategorie"), resultat.getString("categorie")),
+                                           resultat.getString("lienPhoto"),resultat.getInt("seuilDeReappro"), resultat.getInt("etat"), resultat.getInt("quantiteEnStock"),
+                                           resultat.getString("EAN13"));         */
+            }
+        }
+        catch(Exception e)
+        {
+            
+        }
+        
+        return leRetour;
     }
 }
