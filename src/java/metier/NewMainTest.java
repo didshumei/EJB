@@ -67,9 +67,15 @@ public class NewMainTest {
             throw new RuntimeException(ne);
         }
      */
+        /*
         String cb = "0123456789120";
         EJBArticle test = new EJBArticle();        
         Article aAfficher = test.getArticleByCodeBarre(cb);
-        System.out.println(aAfficher);
+        System.out.println(aAfficher);*/
+        
+        int quantite = 15;
+        EJBArticle test = new EJBArticle();
+        Retour<Integer> plouf = test.ajouterQuantiteArticleAuStock(1, quantite);
+        System.out.println(plouf);
     }
 }
